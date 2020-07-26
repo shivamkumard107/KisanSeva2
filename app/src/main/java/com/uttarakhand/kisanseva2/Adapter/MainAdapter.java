@@ -48,7 +48,7 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.viewHolder> {
 
     @Override
     public void onBindViewHolder(viewHolder holder, final int position) {
-        holder.linear.setBackgroundColor(Color.parseColor(list.get(position).getBackgroundColor()));
+//        holder.linear.setBackgroundColor(Color.parseColor(list.get(position).getBackgroundColor()));
         holder.englishText.setText(list.get(position).getEnglishText());
         holder.hindiText.setText(list.get(position).getHindiText());
         holder.imageView.setImageResource(list.get(position).getImageUrl());

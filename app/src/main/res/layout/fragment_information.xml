@@ -8,7 +8,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="3dp"
-        android:background="#fffefe" />
+        android:background="#fffefe"
+        android:layout_marginBottom="64dp"/>
 
     <ProgressBar
         android:id="@+id/progress"

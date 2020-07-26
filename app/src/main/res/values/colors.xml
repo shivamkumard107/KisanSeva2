@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#008577</color>
-    <color name="colorPrimaryDark">#00574B</color>
-    <color name="colorAccent">#D81B60</color>
+    <color name="colorPrimary">#8a2be2</color>
+    <color name="colorPrimaryDark">#3700B3</color>
+    <color name="colorAccent">#03DAC5</color>
+    <color name="blackText">#000</color>
     <color name="graycolor">#d4d4d4</color>
     <color name="white">#ffffff</color>
     <color name="colorLogin">#009688</color>
@@ -41,5 +42,6 @@
         <item>@color/dot_light_screen1</item>
         <item>@color/dot_light_screen1</item>
     </array>
+
 
 </resources>

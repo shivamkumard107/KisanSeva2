@@ -1,4 +1,4 @@
-package com.uttarakhand.kisanseva2.activities;
+package com.uttarakhand.kisanseva2.activities.generalInfo;
 
 import android.content.Intent;
 import android.os.Bundle;

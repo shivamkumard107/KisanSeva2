@@ -17,11 +17,11 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.uttarakhand.kisanseva2.Adapter.MainAdapter;
 import com.uttarakhand.kisanseva2.R;
-import com.uttarakhand.kisanseva2.activities.CropProductionActivity;
-import com.uttarakhand.kisanseva2.activities.HorticultureActivity;
-import com.uttarakhand.kisanseva2.activities.SelectPolicyActivity;
-import com.uttarakhand.kisanseva2.activities.SelectProblemActivity;
-import com.uttarakhand.kisanseva2.activities.SoilHealthActivity;
+import com.uttarakhand.kisanseva2.activities.generalInfo.CropProductionActivity;
+import com.uttarakhand.kisanseva2.activities.generalInfo.HorticultureActivity;
+import com.uttarakhand.kisanseva2.activities.generalInfo.SelectPolicyActivity;
+import com.uttarakhand.kisanseva2.activities.generalInfo.SelectProblemActivity;
+import com.uttarakhand.kisanseva2.activities.generalInfo.SoilHealthActivity;
 import com.uttarakhand.kisanseva2.model.MainListItem;
 
 import java.util.ArrayList;
@@ -34,14 +34,14 @@ public class InformationFragment extends Fragment {
     private Integer[] imageUrls = {R.raw.crop_production_opt, R.raw.treat, R.raw.shc2,/*R.raw.production_main,*/R.raw.horticulture_main, R.raw.govp};
 
     private Integer[] hindiTexts = {R.string.crop_production_card_title_hi, R.string.treatment_card_title_hi,
-            R.string.storage_card_title_hi,/*R.string.survey_card_title_hi,*/
+            R.string.storage_card_title_hi,
             R.string.horticulture_card_title_hi, R.string.policy_card_title_hi};
 
     private Integer[] englishTexts = {R.string.crop_production_card_title_en, R.string.treatment_card_title_en,
-            R.string.storage_card_title_en,/*R.string.survey_card_title_en,*/
+            R.string.storage_card_title_en,
             R.string.horticulture_card_title_en, R.string.policy_card_title_en};
 
-    private String[] backgroundColors = {"#35e372", "#a4f075", "#ffff4d",/*"#70dbdb",*/"#cef63c", "#ff9f80"};
+//    private String[] backgroundColors = {"#35e372", "#a4f075", "#ffff4d","#cef63c", "#ff9f80"};
 
     @Nullable
     @Override
@@ -64,7 +64,7 @@ public class InformationFragment extends Fragment {
             item.setImageUrl(imageUrls[i]);
             item.setHindiText(hindiTexts[i]);
             item.setEnglishText(englishTexts[i]);
-            item.setBackgroundColor(backgroundColors[i]);
+//            item.setBackgroundColor(backgroundColors[i]);
             item.setIntent(links[i]);
 
             list.add(item);

@@ -11,7 +11,7 @@ import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.uttarakhand.kisanseva2.R;
-import com.uttarakhand.kisanseva2.activities.WebActivity;
+import com.uttarakhand.kisanseva2.activities.generalInfo.WebActivity;
 
 import java.util.ArrayList;
 
