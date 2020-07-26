@@ -1,56 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="4dp"
-    card_view:cardUseCompatPadding="true"
-    android:background="#ca684d"
+    android:background="#14000000"
+    card_view:cardCornerRadius="3dp"
     card_view:cardElevation="4dp"
-    card_view:cardCornerRadius="3dp">
+    card_view:cardUseCompatPadding="true">
 
     <LinearLayout
         android:id="@+id/linear"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="#14000000"
         android:orientation="vertical">
+
         <ImageView
-            android:src="@raw/treat"
+            android:id="@+id/imageView"
             android:layout_width="match_parent"
             android:layout_height="160dp"
-            android:id="@+id/imageView"
-            android:scaleType="centerCrop" />
+            android:scaleType="centerCrop"
+            android:src="@raw/treat" />
 
-        <LinearLayout
-            android:background="#14000000"
-            android:padding="5dp"
+
+        <TextView
+            android:id="@+id/english_title"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
             android:layout_gravity="center"
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <TextView
-                android:id="@+id/hindi_title"
-                android:layout_marginLeft="7dp"
-                android:layout_marginRight="7dp"
-                android:layout_gravity="center"
-                android:layout_weight="1"
-                android:textColor="#505050"
-                android:textSize="18sp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Hindi Text"/>
-            <TextView
-                android:id="@+id/english_title"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:text="@string/english_text"
+            android:textColor="#505050"
+            android:textSize="18sp" />
 
-                android:layout_gravity="center"
-                android:layout_weight="1"
-                android:textColor="#505050"
-                android:textSize="18sp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="English Text"/>
-        </LinearLayout>
 
     </LinearLayout>
 </androidx.cardview.widget.CardView>

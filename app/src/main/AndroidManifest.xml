@@ -12,8 +12,11 @@
         android:roundIcon="@drawable/app_icon"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activities.About_us"
+        <activity android:name=".activities.WeatherActivity"
             android:theme="@style/AppTheme.NoActionBar"/>
+        <activity
+            android:name=".activities.About_us"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".activities.generalInfo.TreatmentDetails" />
         <activity android:name=".activities.generalInfo.CropDetailActivity" />
         <activity android:name=".activities.generalInfo.WebActivity" />

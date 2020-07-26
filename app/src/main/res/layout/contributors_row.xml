@@ -43,14 +43,13 @@
                     android:layout_toRightOf="@id/image"
                     android:orientation="horizontal">
 
-
                     <TextView
                         android:id="@+id/name"
                         style="@style/HeaderText"
                         android:layout_width="150dp"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/poppinsbold"
-                        android:text="Arjun Anand"
+                        android:text="Shivam Kumar"
                         android:textSize="20sp" />
 
                     <ImageView

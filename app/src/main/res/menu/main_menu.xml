@@ -2,6 +2,14 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
+
+    <item
+        android:id="@+id/action_weather"
+        android:icon="@drawable/ic_weather"
+        android:orderInCategory="100"
+        android:title="@string/title_weather"
+        app:showAsAction="ifRoom" />
+
     <item
         android:id="@+id/action_signout"
         android:icon="@drawable/ic_logout"

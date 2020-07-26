@@ -50,7 +50,7 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.viewHolder> {
     public void onBindViewHolder(viewHolder holder, final int position) {
 //        holder.linear.setBackgroundColor(Color.parseColor(list.get(position).getBackgroundColor()));
         holder.englishText.setText(list.get(position).getEnglishText());
-        holder.hindiText.setText(list.get(position).getHindiText());
+//        holder.hindiText.setText(list.get(position).getHindiText());
         holder.imageView.setImageResource(list.get(position).getImageUrl());
 
         holder.linear.setOnClickListener(new View.OnClickListener() {
@@ -76,7 +76,7 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.viewHolder> {
             super(itemView);
             linear = (LinearLayout) itemView.findViewById(R.id.linear);
             imageView = (ImageView) itemView.findViewById(R.id.imageView);
-            hindiText = (TextView) itemView.findViewById(R.id.hindi_title);
+//            hindiText = (TextView) itemView.findViewById(R.id.hindi_title);
             englishText = (TextView) itemView.findViewById(R.id.english_title);
         }
     }

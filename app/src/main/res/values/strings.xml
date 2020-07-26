@@ -4,6 +4,7 @@
     <string name="title_crop_predict">Predict</string>
     <string name="title_info">Information</string>
     <string name="title_weather">Weather</string>
+    <string name="title_quality">Quality</string>
     <string name="title_profile">Profile</string>
     <string name="submit_text">Submit</string>
 
@@ -79,7 +80,7 @@
     <string name="treatment_card_title_en">Crop Treatment Method</string>
     <string name="treatment_card_title_hi">प्रमुख समस्याएं एवं निवारण</string>
 
-    <string name="storage_card_title_en">Soil Health Card </string>
+    <string name="storage_card_title_en">Soil Health Card \n</string>
     <string name="storage_card_title_hi">मृदा स्वास्थ्य कार्डं</string>
 
     <string name="survey_card_title_en"> Production Details</string>
@@ -827,5 +828,6 @@
     <string name="quality_prediction">Quality Prediction</string>
     <string name="sign_out">Sign Out</string>
     <string name="data_not_available">Data Not Available...</string>
+    <string name="english_text">English Text</string>
 </resources>
 

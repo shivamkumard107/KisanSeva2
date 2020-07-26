@@ -17,9 +17,9 @@
         android:title="@string/title_info" />
 
     <item
-        android:id="@+id/navigation_weather"
-        android:icon="@drawable/ic_weather"
-        android:title="@string/title_weather" />
+        android:id="@+id/navigation_quality"
+        android:icon="@drawable/ic_quality"
+        android:title="@string/title_quality" />
     <item
         android:id="@+id/navigation_profile"
         android:icon="@drawable/ic_user"
