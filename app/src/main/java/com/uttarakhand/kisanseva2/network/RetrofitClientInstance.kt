@@ -14,7 +14,7 @@ import java.util.concurrent.TimeUnit
 
 object RetrofitClientInstance {
     private var retrofit: Retrofit? = null
-    private const val BASE_URL = "https://apitest.usemycards.com/p2p/"
+    private const val BASE_URL = "https://buyfreshdtu.xyz/"
 
     fun getRetrofit(context: Context?): Retrofit? {
         val logging = HttpLoggingInterceptor()
@@ -25,6 +25,7 @@ object RetrofitClientInstance {
             val original = chain.request()
             val requestBuilder = original.newBuilder()
             requestBuilder.addHeader("content-type", "application/json")
+            requestBuilder.addHeader("token", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmMWNmYzQ2YjEwZDkxM2Y0MWVhYmYwYyIsImlhdCI6MTU5NTczNTExMCwiZXhwIjoxNTk1ODIxNTEwfQ.d2Yj-BJf08PXavcuyNAosW0VrdsWz8GIXYd-WESPF5k")
 
             val request = requestBuilder.build()
             chain.proceed(request)

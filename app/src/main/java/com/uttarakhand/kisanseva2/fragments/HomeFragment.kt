@@ -1,11 +1,22 @@
 package com.uttarakhand.kisanseva2.fragments
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.uttarakhand.kisanseva2.Adapter.FarmerInventoryAdapter
 import com.uttarakhand.kisanseva2.R
+import com.uttarakhand.kisanseva2.model.FarmerInfo
+import com.uttarakhand.kisanseva2.network.APIs
+import com.uttarakhand.kisanseva2.network.RetrofitClientInstance
+import kotlinx.android.synthetic.main.fragment_home.*
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
+import retrofit2.create
 
 /**
  * A simple [Fragment] subclass.
@@ -24,7 +35,27 @@ class HomeFragment : Fragment() {
     }
 
     private fun initData() {
+        RetrofitClientInstance.getRetrofit(context)
+                ?.create<APIs>()
+                ?.farmerInfo
+                ?.enqueue(object : Callback<FarmerInfo> {
+                    override fun onFailure(call: Call<FarmerInfo>, t: Throwable) {
+                        Log.d("GiftOnFailure", t.message!!)
+                    }
 
+                    override fun onResponse(
+                            call: Call<FarmerInfo>,
+                            response: Response<FarmerInfo>
+                    ) {
+                        Log.d("GiftOnResponse", response.body()!!.toString())
+                        initRecycler(response.body()!!)
+                    }
+                })
+    }
+
+    private fun initRecycler(body: FarmerInfo) {
+        rvInventory.adapter = FarmerInventoryAdapter(body, context)
+        rvInventory.layoutManager = LinearLayoutManager(context)
     }
 
     companion object {

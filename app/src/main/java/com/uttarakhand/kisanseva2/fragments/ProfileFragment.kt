@@ -2,15 +2,23 @@ package com.uttarakhand.kisanseva2.fragments
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
-import android.view.View.OnClickListener
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.google.android.material.card.MaterialCardView
 import com.uttarakhand.kisanseva2.R
 import com.uttarakhand.kisanseva2.activities.About_us
+import com.uttarakhand.kisanseva2.model.FarmerInfo
+import com.uttarakhand.kisanseva2.network.APIs
+import com.uttarakhand.kisanseva2.network.RetrofitClientInstance
 import kotlinx.android.synthetic.main.fragment_profile.*
+import kotlinx.android.synthetic.main.fragment_profile.view.*
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
+import retrofit2.create
 
 /**
  * A simple [Fragment] subclass.
@@ -26,8 +34,29 @@ class ProfileFragment : Fragment() {
         v.findViewById<View>(R.id.cardSettings).setOnClickListener { upload: View? -> }
         v.findViewById<View>(R.id.cardSavedPosts).setOnClickListener { doc: View? -> }
         aboutus = v.findViewById(R.id.cardAbout)
-        cardAbout.setOnClickListener { startActivity(Intent(context, About_us::class.java)) }
+        v.cardAbout.setOnClickListener { startActivity(Intent(context, About_us::class.java)) }
+        initData()
         return v
+    }
+
+    private fun initData() {
+        RetrofitClientInstance.getRetrofit(context)
+                ?.create<APIs>()
+                ?.farmerInfo
+                ?.enqueue(object : Callback<FarmerInfo> {
+                    override fun onFailure(call: Call<FarmerInfo>, t: Throwable) {
+                        Log.d("GiftOnFailure", t.message!!)
+                    }
+
+                    override fun onResponse(
+                            call: Call<FarmerInfo>,
+                            response: Response<FarmerInfo>
+                    ) {
+                        Log.d("GiftOnResponse", response.body()!!.toString())
+                        tv_farmer_name.text = response.body()!!.data.name
+                        tv_place.text = response.body()!!.data.address.plus(", " + response.body()!!.data.district)
+                    }
+                })
     }
 
     companion object {

@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/cardView2"
@@ -13,7 +12,10 @@
     app:cardPreventCornerOverlap="true"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toBottomOf="@+id/welcome">
+    app:layout_constraintTop_toBottomOf="@+id/welcome"
+    android:focusable="true"
+    android:clickable="true"
+    android:foreground="?attr/selectableItemBackground">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -21,7 +23,7 @@
         android:paddingBottom="10dp">
 
         <ImageView
-            android:id="@+id/imageView2"
+            android:id="@+id/ivProductImage"
             android:layout_width="match_parent"
             android:layout_height="100dp"
             android:scaleType="centerCrop"
@@ -45,7 +47,7 @@
             android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+            app:layout_constraintTop_toBottomOf="@+id/ivProductImage" />
 
         <TextView
             android:id="@+id/tvQ"
@@ -77,7 +79,7 @@
             android:id="@+id/tvDescription"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="8dp"
             android:gravity="center_vertical"
             android:paddingStart="10dp"
             android:paddingEnd="10dp"
@@ -92,7 +94,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
-            android:layout_marginTop="15sp"
+            android:layout_marginTop="8dp"
             android:fontFamily="@font/poppinsbold"
             android:gravity="center_vertical"
             android:text="Quantity :"
@@ -107,9 +109,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="5dp"
-            android:layout_marginTop="15sp"
+            android:layout_marginTop="8dp"
             android:fontFamily="@font/poppinsbold"
-            android:gravity="center_vertical"
             android:text="20Kg"
             android:textSize="14sp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -122,7 +123,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
-            android:layout_marginTop="15sp"
+            android:layout_marginTop="8dp"
             android:gravity="center_vertical"
             android:text="Price :"
             android:textColor="@android:color/black"
@@ -136,7 +137,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="5dp"
-            android:layout_marginTop="15sp"
+            android:layout_marginTop="8dp"
             android:gravity="center_vertical"
             android:text="Rs 12/Kg"
             android:textSize="14sp"
