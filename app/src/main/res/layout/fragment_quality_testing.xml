@@ -56,7 +56,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="32dp"
+        android:layout_marginEnd="24dp"
         android:layout_marginBottom="60dp"
         android:tint="@color/white"
         app:srcCompat="@drawable/ic_baseline_add_24"

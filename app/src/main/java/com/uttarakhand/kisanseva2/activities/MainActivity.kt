@@ -5,9 +5,13 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
+import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.GravityCompat
+import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.android.material.navigation.NavigationView
 import com.google.firebase.FirebaseApp
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
@@ -17,9 +21,12 @@ import com.uttarakhand.kisanseva2.fragments.InformationFragment
 import com.uttarakhand.kisanseva2.fragments.ProfileFragment
 import com.uttarakhand.kisanseva2.fragments.QualityTesting
 
-class MainActivity : AppCompatActivity() {
+
+class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
     private var firebaseAuth: FirebaseAuth? = null
     private val mDatabase: DatabaseReference? = null
+    private var drawer: DrawerLayout? = null
+
     private val navListener = BottomNavigationView.OnNavigationItemSelectedListener { item: MenuItem ->
         var selectedFragment: Fragment? = null
         when (item.itemId) {
@@ -48,7 +55,16 @@ class MainActivity : AppCompatActivity() {
         val bottomNav = findViewById<BottomNavigationView>(R.id.nav_view)
         bottomNav.setOnNavigationItemSelectedListener(navListener)
 
-        //I added this if statement to keep the selected fragment when rotating the device
+
+        val toolbar: androidx.appcompat.widget.Toolbar = findViewById(R.id.toolbar)
+        setSupportActionBar(toolbar)
+        drawer = findViewById<DrawerLayout>(R.id.drawer_layout)
+        val navigationView = findViewById<NavigationView>(R.id.nav_draw_view)
+        navigationView.setNavigationItemSelectedListener(this)
+        val toggle = ActionBarDrawerToggle(this, drawer, toolbar,
+                R.string.navigation_drawer_open, R.string.navigation_drawer_close)
+        drawer!!.addDrawerListener(toggle)
+        toggle.syncState()
         if (savedInstanceState == null) {
             supportFragmentManager.beginTransaction().replace(R.id.fragment_container,
                     HomeFragment()).commit()
@@ -61,14 +77,30 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        if (item.itemId == R.id.action_signout) {
-            firebaseAuth!!.signOut()
-            startActivity(Intent(this, LoginActivity::class.java))
-            finish()
-        } else if (item.itemId == R.id.action_weather) {
-            startActivity(Intent(this, WeatherActivity::class.java))
-        }
         return super.onOptionsItemSelected(item)
+    }
+
+    override fun onNavigationItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            R.id.nav_quality -> Toast.makeText(this, "Coming Soon!", Toast.LENGTH_SHORT).show()
+            R.id.nav_lang -> Toast.makeText(this, "Coming Soon!", Toast.LENGTH_SHORT).show()
+            R.id.nav_weather -> startActivity(Intent(this, WeatherActivity::class.java))
+            R.id.nav_signout -> {
+                FirebaseAuth.getInstance().signOut()
+                startActivity(Intent(this, LoginActivity::class.java))
+                finish()
+            }
+        }
+        drawer!!.closeDrawer(GravityCompat.START)
+        return true
+    }
+
+    override fun onBackPressed() {
+        if (drawer!!.isDrawerOpen(GravityCompat.START)) {
+            drawer!!.closeDrawer(GravityCompat.START)
+        } else {
+            super.onBackPressed()
+        }
     }
 
 }

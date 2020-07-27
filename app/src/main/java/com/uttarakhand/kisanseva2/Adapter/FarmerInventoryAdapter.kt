@@ -7,6 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
+import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.uttarakhand.kisanseva2.R
@@ -18,6 +20,7 @@ class FarmerInventoryAdapter(val infos: FarmerInfo,
 
 
     class InventoryViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        val cardView = itemView.findViewById<CardView>(R.id.cardView2)
         val tvCategory: TextView = itemView.findViewById<TextView>(R.id.tvCategory)
         val tvQuality: TextView = itemView.findViewById<TextView>(R.id.tvQuality)
         val tvDescription: TextView = itemView.findViewById<TextView>(R.id.tvDescription)
@@ -38,11 +41,17 @@ class FarmerInventoryAdapter(val infos: FarmerInfo,
     @SuppressLint("SetTextI18n")
     override fun onBindViewHolder(holder: InventoryViewHolder, position: Int) {
         val item = infos.data.items[position]
-        holder.tvCategory.text = item.category
+        holder.tvCategory.text = item.title
         holder.tvDescription.text = item.description
         holder.tvPrice.text = "Rs${item.price}/Kg"
         holder.tvQuality.text = item.quality
         holder.tvQuantity.text = "${item.quantity} Kg"
-        Glide.with(context!!).load("https://buyfreshdtu.xyz" + item.image).into(holder.ivImage)
+        if (item.image.substring(0, 4) == "http") Glide.with(context!!).load(item.image).into(holder.ivImage)
+        else Glide.with(context!!).load("https://buyfreshdtu.xyz" + item.image).into(holder.ivImage)
+
+
+        holder.cardView.setOnClickListener {
+            Toast.makeText(context, position.toString(), Toast.LENGTH_SHORT).show()
+        }
     }
 }

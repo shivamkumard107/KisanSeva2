@@ -140,7 +140,6 @@ class VerifyFragment : Fragment() {
                     }
 
                     override fun onResponse(call: Call<IsLoggedIn>, response: Response<IsLoggedIn>) {
-                        if (response.body() != null) {
                             Log.d("IsLoggedInResp", response.code().toString())
                             if (response.code() == 200) {
                                 PreferenceManager
@@ -158,7 +157,6 @@ class VerifyFragment : Fragment() {
                                 fr.addToBackStack(null).commit()
                             }
                         }
-                    }
 
                 })
         return isLoggedIn

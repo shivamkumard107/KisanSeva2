@@ -1,14 +1,17 @@
 package com.uttarakhand.kisanseva2.fragments
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentTransaction
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.uttarakhand.kisanseva2.Adapter.FarmerInventoryAdapter
 import com.uttarakhand.kisanseva2.R
+import com.uttarakhand.kisanseva2.activities.UploadInventoryActivity
 import com.uttarakhand.kisanseva2.model.FarmerInfo
 import com.uttarakhand.kisanseva2.network.APIs
 import com.uttarakhand.kisanseva2.network.RetrofitClientInstance
@@ -18,6 +21,7 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import retrofit2.create
+
 
 /**
  * A simple [Fragment] subclass.
@@ -32,7 +36,12 @@ class HomeFragment : Fragment() {
         // Inflate the layout for this fragment
         val v = inflater.inflate(R.layout.fragment_home, container, false)
         initData(v)
+        v.fab_add_item.setOnClickListener { addItem() }
         return v
+    }
+
+    private fun addItem() {
+       startActivity(Intent(context, UploadInventoryActivity::class.java))
     }
 
     private fun initData(v: View) {
