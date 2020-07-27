@@ -13,6 +13,7 @@ import com.uttarakhand.kisanseva2.model.FarmerInfo
 import com.uttarakhand.kisanseva2.network.APIs
 import com.uttarakhand.kisanseva2.network.RetrofitClientInstance
 import kotlinx.android.synthetic.main.fragment_home.*
+import kotlinx.android.synthetic.main.fragment_home.view.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -30,11 +31,12 @@ class HomeFragment : Fragment() {
                               savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
         val v = inflater.inflate(R.layout.fragment_home, container, false)
-        initData()
+        initData(v)
         return v
     }
 
-    private fun initData() {
+    private fun initData(v: View) {
+        v.pb_inventory.visibility = View.VISIBLE
         RetrofitClientInstance.getRetrofit(context)
                 ?.create<APIs>()
                 ?.farmerInfo
@@ -47,15 +49,25 @@ class HomeFragment : Fragment() {
                             call: Call<FarmerInfo>,
                             response: Response<FarmerInfo>
                     ) {
-                        Log.d("GiftOnResponse", response.body()!!.toString())
-                        initRecycler(response.body()!!)
+                        pb_inventory.visibility = View.GONE
+                        if (response.body() != null) {
+                            Log.d("GiftOnResponse", response.body()!!.toString())
+                            initRecycler(response.body()!!, v)
+                        } else {
+                            Log.d("GiftOnResponse", response.message().toString())
+                        }
                     }
                 })
     }
 
-    private fun initRecycler(body: FarmerInfo) {
-        rvInventory.adapter = FarmerInventoryAdapter(body, context)
-        rvInventory.layoutManager = LinearLayoutManager(context)
+    private fun initRecycler(body: FarmerInfo, v: View) {
+        if (body.data.items.isNotEmpty()) {
+            rvInventory.adapter = FarmerInventoryAdapter(body, context)
+            rvInventory.layoutManager = LinearLayoutManager(context)
+        } else {
+            v.no_item.visibility = View.VISIBLE
+        }
+
     }
 
     companion object {

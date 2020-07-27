@@ -1,10 +1,13 @@
 package com.uttarakhand.kisanseva2.network
 
 import android.content.Context
+import android.preference.PreferenceManager
+import android.util.Log
 import com.franmontiel.persistentcookiejar.ClearableCookieJar
 import com.franmontiel.persistentcookiejar.PersistentCookieJar
 import com.franmontiel.persistentcookiejar.cache.SetCookieCache
 import com.franmontiel.persistentcookiejar.persistence.SharedPrefsCookiePersistor
+import com.google.firebase.auth.FirebaseAuth
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -25,7 +28,8 @@ object RetrofitClientInstance {
             val original = chain.request()
             val requestBuilder = original.newBuilder()
             requestBuilder.addHeader("content-type", "application/json")
-            requestBuilder.addHeader("token", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmMWNmYzQ2YjEwZDkxM2Y0MWVhYmYwYyIsImlhdCI6MTU5NTczNTExMCwiZXhwIjoxNTk1ODIxNTEwfQ.d2Yj-BJf08PXavcuyNAosW0VrdsWz8GIXYd-WESPF5k")
+            Log.d("SavedToken", PreferenceManager.getDefaultSharedPreferences(context).getString("token", "")!!)
+            requestBuilder.addHeader("token", FirebaseAuth.getInstance().currentUser!!.uid)
 
             val request = requestBuilder.build()
             chain.proceed(request)

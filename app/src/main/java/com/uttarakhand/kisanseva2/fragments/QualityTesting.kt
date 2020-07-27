@@ -1,6 +1,10 @@
 package com.uttarakhand.kisanseva2.fragments
 
+import android.annotation.SuppressLint
+import android.app.Activity
+import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,6 +12,8 @@ import android.widget.*
 import android.widget.AdapterView.OnItemSelectedListener
 import androidx.fragment.app.Fragment
 import com.uttarakhand.kisanseva2.R
+import kotlinx.android.synthetic.main.fragment_quality_testing.*
+import kotlinx.android.synthetic.main.fragment_quality_testing.view.*
 
 /**
  * A simple [Fragment] subclass.
@@ -15,7 +21,7 @@ import com.uttarakhand.kisanseva2.R
  * create an instance of this fragment.
  */
 class QualityTesting : Fragment(), OnItemSelectedListener {
-    var country = arrayOf<String?>("Select Category", "India", "USA", "China", "Japan", "Other")
+    val category = arrayOf<String?>("Select Category", "Wheat", "Other")
     var etCategory: EditText? = null
 
     // TODO: Rename and change types of parameters
@@ -24,8 +30,8 @@ class QualityTesting : Fragment(), OnItemSelectedListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         if (arguments != null) {
-            mParam1 = arguments!!.getString(ARG_PARAM1)
-            mParam2 = arguments!!.getString(ARG_PARAM2)
+            mParam1 = requireArguments().getString(ARG_PARAM1)
+            mParam2 = requireArguments().getString(ARG_PARAM2)
         }
     }
 
@@ -39,16 +45,45 @@ class QualityTesting : Fragment(), OnItemSelectedListener {
         spin.onItemSelectedListener = this
 
         //Creating the ArrayAdapter instance having the country list
-        val aa: ArrayAdapter<*> = ArrayAdapter<Any?>(context!!, android.R.layout.simple_spinner_item, country)
+        val aa: ArrayAdapter<*> = ArrayAdapter<Any?>(requireContext(), android.R.layout.simple_spinner_item, category)
         aa.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         //Setting the ArrayAdapter data on the Spinner
         spin.adapter = aa
+
+        v.imageButton.setOnClickListener { selectImage(v) }
+        v.submitPost.setOnClickListener { connectToServer() }
         return v
     }
 
+    @SuppressLint("SetTextI18n")
+    private fun connectToServer() {
+        tvMessage.visibility = View.VISIBLE
+        tvMessage.setTextColor(resources.getColor(android.R.color.holo_red_dark))
+        if (!imageSelected) {
+            tvMessage.text = "Select Crop Image"
+        } else if (category[0]!! == spinner_category.selectedItem) {
+            tvMessage.text = "Select Crop Category"
+        } else if (category[2] == spinner_category.selectedItem && etCategory!!.text.toString().trim() == "") {
+            tvMessage.text = "Specify Category"
+        } else {
+            tvMessage.setTextColor(resources.getColor(R.color.green_light))
+            tvMessage.text = "Uploading... Please wait!"
+        }
+    }
+
+    private val SELECT_MULTIPLE_IMAGES = 0
+
+    fun selectImage(v: View?) {
+        val intent = Intent()
+        intent.type = "*/*"
+        intent.putExtra(Intent.EXTRA_ALLOW_MULTIPLE, true)
+        intent.action = Intent.ACTION_GET_CONTENT
+        startActivityForResult(Intent.createChooser(intent, "Select Picture"), SELECT_MULTIPLE_IMAGES)
+    }
+
     override fun onItemSelected(parent: AdapterView<*>?, view: View, position: Int, id: Long) {
-        Toast.makeText(context, country[position], Toast.LENGTH_SHORT).show()
-        if ("Other" == country[position]) {
+        Toast.makeText(context, category[position], Toast.LENGTH_SHORT).show()
+        if ("Other" == category[position]) {
             etCategory!!.visibility = View.VISIBLE
         } else {
             etCategory!!.visibility = View.GONE
@@ -80,5 +115,29 @@ class QualityTesting : Fragment(), OnItemSelectedListener {
             fragment.arguments = args
             return fragment
         }
+    }
+
+    private var imageSelected: Boolean = false
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        try {
+            if (requestCode == SELECT_MULTIPLE_IMAGES && resultCode == Activity.RESULT_OK && null != data) {
+                // When a single image is selected.
+                if (data.data != null) {
+                    var uri = data.data
+                    Log.d("ImageDetails", "Single Image URI : $uri")
+                    uri = data.data
+                    imageSelected = true
+                    imageButton.setBackgroundResource(android.R.color.transparent)
+                    imageButton.setImageURI(uri)
+                    Log.i("URI_pic", uri.toString())
+                }
+            }
+        } catch (e: Exception) {
+            Toast.makeText(context, "Something Went Wrong.", Toast.LENGTH_LONG).show()
+            e.printStackTrace()
+        }
+        super.onActivityResult(requestCode, resultCode, data)
+
     }
 }

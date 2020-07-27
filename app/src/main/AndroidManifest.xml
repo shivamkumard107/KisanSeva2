@@ -26,7 +26,9 @@
         <activity android:name=".activities.generalInfo.SoilHealthActivity" />
         <activity android:name=".activities.generalInfo.SelectProblemActivity" />
         <activity android:name=".activities.generalInfo.CropProductionActivity" />
-        <activity android:name=".activities.LoginActivity" />
+        <activity android:name=".activities.LoginActivity" >
+
+        </activity>
         <activity android:name=".activities.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

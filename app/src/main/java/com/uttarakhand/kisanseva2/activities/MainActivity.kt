@@ -42,8 +42,8 @@ class MainActivity : AppCompatActivity() {
         firebaseAuth = FirebaseAuth.getInstance()
         if (firebaseAuth!!.currentUser == null) {
             Toast.makeText(this, "Unauthorized!!", Toast.LENGTH_SHORT).show()
-            //            finish();
-//            startActivity(new Intent(this, LoginActivity.class));
+            startActivity(Intent(this, LoginActivity::class.java))
+            finish()
         }
         val bottomNav = findViewById<BottomNavigationView>(R.id.nav_view)
         bottomNav.setOnNavigationItemSelectedListener(navListener)
