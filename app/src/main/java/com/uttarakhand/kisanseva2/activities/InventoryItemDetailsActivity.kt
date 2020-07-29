@@ -17,7 +17,6 @@ import com.uttarakhand.kisanseva2.model.Item
 
 class InventoryItemDetailsActivity : AppCompatActivity() {
     private var mSectionsPagerAdapter: SectionsPagerAdapter? = null
-
     /**
      * The [ViewPager] that will host the section contents.
      */
@@ -30,7 +29,7 @@ class InventoryItemDetailsActivity : AppCompatActivity() {
 
         val toolbar: Toolbar = findViewById<View>(R.id.toolbar) as Toolbar
         setSupportActionBar(toolbar)
-        mSectionsPagerAdapter = SectionsPagerAdapter(supportFragmentManager)
+        mSectionsPagerAdapter = SectionsPagerAdapter(supportFragmentManager, item)
 
         mViewPager = findViewById<View>(R.id.view_pager) as ViewPager
         mViewPager?.adapter = mSectionsPagerAdapter
@@ -40,14 +39,14 @@ class InventoryItemDetailsActivity : AppCompatActivity() {
     }
 
 
-    class SectionsPagerAdapter(fm: FragmentManager) :
+    class SectionsPagerAdapter(fm: FragmentManager, private val item: Item) :
             FragmentPagerAdapter(fm) {
         override fun getItem(position: Int): Fragment {
             var fragment: Fragment =
-                    ItemInfoFragment()
+                    ItemInfoFragment(item)
             when (position) {
                 0 -> fragment =
-                        ItemInfoFragment()
+                        ItemInfoFragment(item)
                 1 -> fragment =
                         RatingReviewsFragment()
             }

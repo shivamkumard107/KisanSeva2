@@ -1,6 +1,6 @@
 package com.uttarakhand.kisanseva2.model.allOrders
 
-data class TransactionId(
+data class  TransactionId(
     val __v: Int,
     val _id: String,
     val createdAt: String,

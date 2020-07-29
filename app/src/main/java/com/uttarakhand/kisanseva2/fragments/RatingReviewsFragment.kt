@@ -1,11 +1,15 @@
 package com.uttarakhand.kisanseva2.fragments
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.uttarakhand.kisanseva2.Adapter.RatingReviewAdapter
 import com.uttarakhand.kisanseva2.R
+import com.uttarakhand.kisanseva2.model.RatingReview
+import kotlinx.android.synthetic.main.fragment_rating_reviews.view.*
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -18,22 +22,42 @@ private const val ARG_PARAM2 = "param2"
  * create an instance of this fragment.
  */
 class RatingReviewsFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+
+    private var ratingReviews: ArrayList<RatingReview>? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
         }
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_rating_reviews, container, false)
+        val v = inflater.inflate(R.layout.fragment_rating_reviews, container, false)
+        initData()
+        initRecycler(v)
+
+        return v
+    }
+
+    private fun initData() {
+        // TOdo get Data From Firebase later
+        ratingReviews = ArrayList()
+        ratingReviews!!.add(RatingReview("https://image.flaticon.com/icons/svg/847/847969.svg",
+                "Krishna",
+                4.4,
+                "The quality of the item is very good.", "29th Feb 2020"))
+
+        ratingReviews!!.add(RatingReview("https://image.flaticon.com/icons/svg/847/847969.svg",
+                "Bimla",
+                3.5,
+                "Packaging achha tha!!", "1st August 2020"))
+    }
+
+    private fun initRecycler(v: View) {
+        v.rvRatings.layoutManager = LinearLayoutManager(context)
+        v.rvRatings.adapter = RatingReviewAdapter(ratingReviews!!, context)
     }
 
     companion object {
