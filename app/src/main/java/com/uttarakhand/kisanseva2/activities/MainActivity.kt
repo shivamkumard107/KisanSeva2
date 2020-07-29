@@ -1,11 +1,14 @@
 package com.uttarakhand.kisanseva2.activities
 
+import android.content.DialogInterface
 import android.content.Intent
+import android.content.res.Configuration
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
@@ -17,6 +20,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import com.uttarakhand.kisanseva2.R
 import com.uttarakhand.kisanseva2.fragments.*
+import java.util.*
 
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
@@ -81,7 +85,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.nav_quality -> Toast.makeText(this, "Coming Soon!", Toast.LENGTH_SHORT).show()
-            R.id.nav_lang -> Toast.makeText(this, "Coming Soon!", Toast.LENGTH_SHORT).show()
+            R.id.nav_lang -> changeLanguage()
             R.id.nav_orders -> startActivity(Intent(this, OrdersInfoActivity::class.java))
             R.id.nav_weather -> startActivity(Intent(this, WeatherActivity::class.java))
             R.id.nav_signout -> {
@@ -92,6 +96,34 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         }
         drawer!!.closeDrawer(GravityCompat.START)
         return true
+    }
+
+    private fun changeLanguage() {
+        val items = arrayOf("Hindi", "English")
+        var alertDialogBuilder = AlertDialog.Builder(this)
+        alertDialogBuilder.setTitle("Choose Language...")
+        alertDialogBuilder.setSingleChoiceItems(items, -1,
+                DialogInterface.OnClickListener { dialog, which ->
+                    if (which == 0) {
+                        setLocale("hi")
+                        recreate()
+                    } else if (which == 1) {
+                        setLocale("en")
+                        recreate()
+                    }
+                    dialog.dismiss()
+                })
+        alertDialogBuilder.create()
+        alertDialogBuilder.show()
+
+    }
+
+    private fun setLocale(lang: String) {
+        val locale = Locale(lang)
+        Locale.setDefault(locale)
+        val config = Configuration()
+        config.locale = locale
+        baseContext.resources.updateConfiguration(config, baseContext.resources.displayMetrics)
     }
 
     override fun onBackPressed() {

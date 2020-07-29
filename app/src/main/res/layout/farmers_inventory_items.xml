@@ -110,20 +110,19 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="5dp"
-            android:layout_marginTop="8dp"
             android:fontFamily="@font/poppinsbold"
             android:text="20Kg"
             android:textSize="14sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/tvP"
-            app:layout_constraintTop_toBottomOf="@+id/tvDescription"
+            app:layout_constraintTop_toTopOf="@+id/tvP"
             app:layout_constraintVertical_bias="0.0" />
 
         <TextView
             android:id="@+id/tvQ2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
+            android:layout_marginStart="10dp"
             android:layout_marginTop="8dp"
             android:gravity="center_vertical"
             android:text="Price :"
@@ -135,16 +134,43 @@
 
         <TextView
             android:id="@+id/tvPrice"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="5dp"
-            android:layout_marginTop="8dp"
             android:gravity="center_vertical"
             android:text="Rs 12/Kg"
             android:textSize="14sp"
             app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/cardView"
             app:layout_constraintStart_toEndOf="@+id/tvQ2"
-            app:layout_constraintTop_toBottomOf="@+id/tvDescription"
+            app:layout_constraintTop_toTopOf="@+id/tvQ2"
             app:layout_constraintVertical_bias="0.0" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="12sp"
+            android:layout_marginBottom="3dp"
+            android:backgroundTint="#D3D3D3"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?attr/selectableItemBackgroundBorderless"
+            app:cardCornerRadius="5dp"
+            app:cardElevation="6dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvDescription">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableEnd="@drawable/ic_star"
+                android:drawablePadding="6dp"
+                android:padding="3dp"
+                android:text="4.7"
+                android:textColor="@color/blackText" />
+        </androidx.cardview.widget.CardView>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>

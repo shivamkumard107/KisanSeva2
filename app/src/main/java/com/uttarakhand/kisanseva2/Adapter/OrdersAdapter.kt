@@ -1,14 +1,19 @@
 package com.uttarakhand.kisanseva2.Adapter
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.cardview.widget.CardView
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.uttarakhand.kisanseva2.R
+import com.uttarakhand.kisanseva2.activities.OrderDetailsActivity
 import com.uttarakhand.kisanseva2.model.allOrders.AllOrders
+import com.uttarakhand.kisanseva2.model.allOrders.Data
 
 class OrdersAdapter(private val allOrders: AllOrders,
                     private val context: Context) :
@@ -20,6 +25,7 @@ class OrdersAdapter(private val allOrders: AllOrders,
         val items: RecyclerView = itemView.findViewById(R.id.rvItemOrdered)
         val totalAmout: TextView = itemView.findViewById(R.id.tvAmount)
         val status: TextView = itemView.findViewById(R.id.status)
+        val cv: CardView = itemView.findViewById(R.id.cl)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -40,5 +46,11 @@ class OrdersAdapter(private val allOrders: AllOrders,
         holder.items.layoutManager = LinearLayoutManager(context)
         holder.totalAmout.text = order.amount.toString()
         holder.status.text = if (order.completed) "Ordered" else "Delivered"
+        holder.cv.setOnClickListener { openDetailedOrder(order) }
+    }
+
+    private fun openDetailedOrder(order: Data) {
+        val i = Intent(context, OrderDetailsActivity::class.java)
+        context.startActivity(i)
     }
 }
