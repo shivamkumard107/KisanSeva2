@@ -2,13 +2,14 @@
     <string name="app_name">KisanSeva</string>
     <string name="title_home">Home</string>
     <string name="title_crop_predict">Predict</string>
-    <string name="title_info">Information</string>
+    <string name="title_info">Info</string>
     <string name="title_weather">Weather</string>
     <string name="title_quality">Quality</string>
     <string name="title_profile">Profile</string>
+    <string name="title_chat">Chat</string>
     <string name="submit_text">Submit</string>
 
-    <!--    From BlogRLife-->
+
     <string name="post_title">Url</string>
     <string name="post_description">Port</string>
 

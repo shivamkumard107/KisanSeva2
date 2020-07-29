@@ -20,6 +20,11 @@
         android:id="@+id/navigation_quality"
         android:icon="@drawable/ic_quality"
         android:title="@string/title_quality" />
+
+    <item
+        android:id="@+id/navigation_chat"
+        android:icon="@drawable/ic_chat"
+        android:title="@string/title_chat" />
     <item
         android:id="@+id/navigation_profile"
         android:icon="@drawable/ic_user"

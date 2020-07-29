@@ -2,6 +2,7 @@ package com.uttarakhand.kisanseva2.Adapter
 
 import android.annotation.SuppressLint
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,7 +12,9 @@ import android.widget.Toast
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.google.gson.Gson
 import com.uttarakhand.kisanseva2.R
+import com.uttarakhand.kisanseva2.activities.InventoryItemDetailsActivity
 import com.uttarakhand.kisanseva2.model.FarmerInfo
 
 class FarmerInventoryAdapter(val infos: FarmerInfo,
@@ -51,7 +54,10 @@ class FarmerInventoryAdapter(val infos: FarmerInfo,
 
 
         holder.cardView.setOnClickListener {
-            Toast.makeText(context, position.toString(), Toast.LENGTH_SHORT).show()
+            val i = Intent(context, InventoryItemDetailsActivity::class.java)
+            val gson = Gson()
+            i.putExtra("item", gson.toJson(item))
+            context.startActivity(i)
         }
     }
 }

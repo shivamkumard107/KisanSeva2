@@ -13,8 +13,14 @@
         android:roundIcon="@drawable/app_icon"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activities.UploadInventoryActivity"
-            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".activities.LogisticsInfoActivity" />
+        <activity android:name=".activities.OrdersInfoActivity" />
+        <activity
+            android:name=".activities.InventoryItemDetailsActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".activities.UploadInventoryActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".activities.WeatherActivity"
             android:theme="@style/AppTheme.NoActionBar" />
@@ -31,7 +37,8 @@
         <activity android:name=".activities.generalInfo.SelectProblemActivity" />
         <activity android:name=".activities.generalInfo.CropProductionActivity" />
         <activity android:name=".activities.LoginActivity" />
-        <activity android:name=".activities.MainActivity"
+        <activity
+            android:name=".activities.MainActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

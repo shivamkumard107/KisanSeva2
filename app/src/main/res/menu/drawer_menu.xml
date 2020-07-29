@@ -7,6 +7,10 @@
         android:icon="@drawable/ic_quality"
         android:title="Testing Quality" />
     <item
+        android:id="@+id/nav_orders"
+        android:icon="@drawable/ic_order"
+        android:title="Orders" />
+    <item
         android:id="@+id/nav_lang"
         android:icon="@drawable/ic_language"
         android:title="Change Language" />

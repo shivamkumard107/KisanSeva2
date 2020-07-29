@@ -3,6 +3,7 @@ package com.uttarakhand.kisanseva2.network;
 import com.google.gson.JsonObject;
 import com.uttarakhand.kisanseva2.model.FarmerInfo;
 import com.uttarakhand.kisanseva2.model.IsLoggedIn;
+import com.uttarakhand.kisanseva2.model.allOrders.AllOrders;
 import com.uttarakhand.kisanseva2.model.uploadItem.ItemUploadInventory;
 
 import okhttp3.RequestBody;
@@ -48,4 +49,6 @@ public interface APIs {
                                                      @Field("quantity") String quantity,
                                                      @Field("price") String price,
                                                      @Field("category") String category);
+    @GET("api/mobile/farmer/allOrders")
+    Call<AllOrders> getAllOrders();
 }

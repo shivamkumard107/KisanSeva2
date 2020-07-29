@@ -83,7 +83,7 @@
         app:cardCornerRadius="24dp"
         app:cardElevation="4dp"
         app:layout_constraintBottom_toTopOf="@id/cardSavedPosts"
-        app:layout_constraintEnd_toStartOf="@id/cardSettings"
+        app:layout_constraintEnd_toStartOf="@id/cv_logistics"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvPlace">
 
@@ -93,11 +93,11 @@
 
             <ImageView
                 android:id="@+id/iv"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="58dp"
+                android:layout_height="58dp"
                 android:layout_marginBottom="8dp"
                 android:layout_marginTop="8dp"
-                android:src="@drawable/ic_edit"
+                android:src="@drawable/ic_pencil"
                 app:layout_constraintBottom_toTopOf="@id/tv"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -140,11 +140,11 @@
 
             <ImageView
                 android:id="@+id/iv2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="58dp"
+                android:layout_height="58dp"
                 android:layout_marginBottom="8dp"
                 android:layout_marginTop="8dp"
-                android:src="@drawable/ic_help"
+                android:src="@drawable/ic_wallet"
                 app:layout_constraintBottom_toTopOf="@id/tv2"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -155,7 +155,7 @@
                 android:id="@+id/tv2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Activity2"
+                android:text="Wallet"
                 android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -165,7 +165,7 @@
     </com.google.android.material.card.MaterialCardView>
 
     <com.google.android.material.card.MaterialCardView
-        android:id="@+id/cardSettings"
+        android:id="@+id/cv_logistics"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginEnd="16dp"
@@ -185,11 +185,11 @@
 
             <ImageView
                 android:id="@+id/iv3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="58dp"
+                android:layout_height="58dp"
                 android:layout_marginBottom="8dp"
                 android:layout_marginTop="8dp"
-                android:src="@drawable/ic_setting"
+                android:src="@drawable/ic_logistics"
                 app:layout_constraintBottom_toTopOf="@id/tv3"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -200,7 +200,7 @@
                 android:id="@+id/tv3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Activity 2"
+                android:text="Logistics"
                 android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -223,7 +223,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/cardSavedPosts"
-        app:layout_constraintTop_toBottomOf="@+id/cardSettings">
+        app:layout_constraintTop_toBottomOf="@+id/cv_logistics">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -231,8 +231,8 @@
 
             <ImageView
                 android:id="@+id/iv4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="58dp"
+                android:layout_height="58dp"
                 android:layout_marginBottom="8dp"
                 android:layout_marginTop="8dp"
                 android:src="@drawable/ic_about"

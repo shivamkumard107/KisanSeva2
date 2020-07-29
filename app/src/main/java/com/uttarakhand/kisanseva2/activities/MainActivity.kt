@@ -16,10 +16,7 @@ import com.google.firebase.FirebaseApp
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import com.uttarakhand.kisanseva2.R
-import com.uttarakhand.kisanseva2.fragments.HomeFragment
-import com.uttarakhand.kisanseva2.fragments.InformationFragment
-import com.uttarakhand.kisanseva2.fragments.ProfileFragment
-import com.uttarakhand.kisanseva2.fragments.QualityTesting
+import com.uttarakhand.kisanseva2.fragments.*
 
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
@@ -33,6 +30,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             R.id.navigation_home -> selectedFragment = HomeFragment()
             R.id.navigation_info -> selectedFragment = InformationFragment()
             R.id.navigation_quality -> selectedFragment = QualityTesting()
+            R.id.navigation_chat -> selectedFragment = ChatFragment()
             R.id.navigation_profile -> selectedFragment = ProfileFragment()
         }
         if (selectedFragment != null) {
@@ -84,6 +82,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         when (item.itemId) {
             R.id.nav_quality -> Toast.makeText(this, "Coming Soon!", Toast.LENGTH_SHORT).show()
             R.id.nav_lang -> Toast.makeText(this, "Coming Soon!", Toast.LENGTH_SHORT).show()
+            R.id.nav_orders -> startActivity(Intent(this, OrdersInfoActivity::class.java))
             R.id.nav_weather -> startActivity(Intent(this, WeatherActivity::class.java))
             R.id.nav_signout -> {
                 FirebaseAuth.getInstance().signOut()

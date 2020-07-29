@@ -147,6 +147,7 @@ class VerifyFragment : Fragment() {
                                         .edit().putString("token", FirebaseAuth.getInstance().currentUser!!.uid)
                                         .apply()
                                 startActivity(Intent(context, MainActivity::class.java))
+                                activity!!.finish()
                             } else {
                                 val bundle = Bundle()
                                 bundle.putString(Constants.PHONE_NUMBER, phoneNumber)

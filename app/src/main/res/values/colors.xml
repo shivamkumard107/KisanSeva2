@@ -36,6 +36,7 @@
     <!-- Placeholder colors-->
     <color name="stay_color">#999999</color>
     <color name="colorTitle">#FF362159</color>
+    <color name="link_blue">#0000EE</color>
 
     <array name="array_dot_active">
         <item>@color/dot_light_screen1</item>

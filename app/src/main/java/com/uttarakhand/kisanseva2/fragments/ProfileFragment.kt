@@ -10,6 +10,7 @@ import androidx.fragment.app.Fragment
 import com.google.android.material.card.MaterialCardView
 import com.uttarakhand.kisanseva2.R
 import com.uttarakhand.kisanseva2.activities.About_us
+import com.uttarakhand.kisanseva2.activities.LogisticsInfoActivity
 import com.uttarakhand.kisanseva2.model.FarmerInfo
 import com.uttarakhand.kisanseva2.network.APIs
 import com.uttarakhand.kisanseva2.network.RetrofitClientInstance
@@ -31,10 +32,11 @@ class ProfileFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         val v = inflater.inflate(R.layout.fragment_profile, container, false)
-        v.findViewById<View>(R.id.cardSettings).setOnClickListener { upload: View? -> }
+        v.findViewById<View>(R.id.cv_logistics).setOnClickListener { upload: View? -> }
         v.findViewById<View>(R.id.cardSavedPosts).setOnClickListener { doc: View? -> }
         aboutus = v.findViewById(R.id.cardAbout)
         v.cardAbout.setOnClickListener { startActivity(Intent(context, About_us::class.java)) }
+        v.cv_logistics.setOnClickListener { startActivity(Intent(context, LogisticsInfoActivity::class.java)) }
         initData()
         return v
     }
