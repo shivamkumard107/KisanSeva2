@@ -13,7 +13,11 @@
         android:roundIcon="@drawable/app_icon"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activities.LogisticsInfoActivity" />
+        <activity android:name=".activities.QualityTestResultActivity"
+            android:label="Quality Results"/>
+        <activity
+            android:name=".activities.LogisticsInfoActivity"
+            android:label="Logistics Solution" />
         <activity android:name=".activities.OrdersInfoActivity" />
         <activity
             android:name=".activities.InventoryItemDetailsActivity"

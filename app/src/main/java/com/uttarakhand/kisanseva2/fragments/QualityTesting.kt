@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
+import android.os.Handler
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -12,6 +13,7 @@ import android.widget.*
 import android.widget.AdapterView.OnItemSelectedListener
 import androidx.fragment.app.Fragment
 import com.uttarakhand.kisanseva2.R
+import com.uttarakhand.kisanseva2.activities.QualityTestResultActivity
 import kotlinx.android.synthetic.main.fragment_quality_testing.*
 import kotlinx.android.synthetic.main.fragment_quality_testing.view.*
 
@@ -68,6 +70,14 @@ class QualityTesting : Fragment(), OnItemSelectedListener {
         } else {
             tvMessage.setTextColor(resources.getColor(R.color.green_light))
             tvMessage.text = "Uploading... Please wait!"
+            pb_testing.visibility = View.VISIBLE
+            submitPost.visibility = View.GONE
+            val handler = Handler()
+            handler.postDelayed({
+                pb_testing.visibility = View.GONE
+                submitPost.visibility = View.VISIBLE
+                startActivity(Intent(context, QualityTestResultActivity::class.java))
+            }, 3000)
         }
     }
 

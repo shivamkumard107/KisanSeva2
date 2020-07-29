@@ -74,9 +74,12 @@
         android:textStyle="bold" />
 
     <ProgressBar
-        android:id="@+id/pb"
+        android:id="@+id/pb_testing"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:visibility="gone" />
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:visibility="gone"
+        android:layout_marginBottom="10dp"/>
 </RelativeLayout>
