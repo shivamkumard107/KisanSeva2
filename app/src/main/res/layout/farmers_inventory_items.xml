@@ -58,7 +58,7 @@
             android:fontFamily="@font/poppinsbold"
             android:gravity="center_vertical"
             android:paddingStart="10dp"
-            android:text="Quality: "
+            android:text="@string/quality"
             android:textColor="@android:color/black"
             android:textSize="14sp"
             app:layout_constraintStart_toStartOf="parent"
@@ -68,6 +68,7 @@
             android:id="@+id/tvQuality"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
             android:layout_marginTop="4dp"
             android:fontFamily="@font/poppinsbold"
             android:gravity="center_vertical"
@@ -98,7 +99,7 @@
             android:layout_marginTop="8dp"
             android:fontFamily="@font/poppinsbold"
             android:gravity="center_vertical"
-            android:text="Quantity :"
+            android:text="@string/quantity"
             android:textColor="@color/blackText"
             android:textSize="14sp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -125,7 +126,7 @@
             android:layout_marginStart="10dp"
             android:layout_marginTop="8dp"
             android:gravity="center_vertical"
-            android:text="Price :"
+            android:text="@string/price"
             android:textColor="@android:color/black"
             android:textSize="14sp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -147,18 +148,18 @@
             app:layout_constraintVertical_bias="0.0" />
 
 
-            <TextView
-                android:id="@+id/rating"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="12sp"
-                android:drawableEnd="@drawable/ic_star"
-                android:drawablePadding="6dp"
-                android:text="4.7"
-                android:textColor="@color/blackText"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/tvPrice"/>
+        <TextView
+            android:id="@+id/rating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="12sp"
+            android:drawableEnd="@drawable/ic_star"
+            android:drawablePadding="6dp"
+            android:text="4.7"
+            android:textColor="@color/blackText"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tvPrice" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>

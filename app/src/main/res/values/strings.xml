@@ -856,5 +856,12 @@
     <string name="eParivahan">eParivahan</string>
     <string name="eParivahan_desc"><![CDATA[eParivahan is an end to end Logistics automation platform providing vehicle procurement, placement and tracking services to corporates and SMEs.We have a presence in West Bengal, Bihar, Uttar Pradesh, Madhya Pradesh, Gujrat, Maharastra, Karnataka, Tamil Nadu, etc with a network of 500+ transporters & 11000+ fleet under our Management. Trader/FPO/Companies can contact eParivahan for their Procurement & Tracking needs. For Booking call us at +91 8584077771]]></string>
     <string name="edit_profile">Edit Profile</string>
+    <string name="logistics">Logistics</string>
+    <string name="wallet">Wallet</string>
+    <string name="about_us">About Us</string>
+    <string name="quality">Quality :</string>
+    <string name="quantity">Quantity :</string>
+    <string name="price">Price :</string>
+    <string name="speicify_category">Specify Category</string>
 </resources>
 

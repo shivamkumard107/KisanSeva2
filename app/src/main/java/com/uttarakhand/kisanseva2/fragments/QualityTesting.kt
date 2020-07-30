@@ -23,7 +23,6 @@ import kotlinx.android.synthetic.main.fragment_quality_testing.view.*
  * create an instance of this fragment.
  */
 class QualityTesting : Fragment(), OnItemSelectedListener {
-    val category = arrayOf<String?>(requireContext().getString(R.string.select_category), requireContext().getString(R.string.wheat), requireContext().getString(R.string.other))
     var etCategory: EditText? = null
 
     // TODO: Rename and change types of parameters
@@ -37,10 +36,14 @@ class QualityTesting : Fragment(), OnItemSelectedListener {
         }
     }
 
+    private lateinit var category: Array<String?>
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
         val v = inflater.inflate(R.layout.fragment_quality_testing, container, false)
+        category = arrayOf<String?>(requireActivity().getString(R.string.select_category), requireActivity().getString(R.string.wheat), requireActivity().getString(R.string.other))
+
         etCategory = v.findViewById(R.id.et_title)
         v.findViewById<View>(R.id.imageButton).setOnClickListener { v1: View? -> }
         val spin = v.findViewById<View>(R.id.spinner_category) as Spinner
@@ -62,11 +65,11 @@ class QualityTesting : Fragment(), OnItemSelectedListener {
         tvMessage.visibility = View.VISIBLE
         tvMessage.setTextColor(resources.getColor(android.R.color.holo_red_dark))
         if (!imageSelected) {
-            tvMessage.text = "Select Crop Image"
+            tvMessage.text = requireActivity().getString(R.string.select_category)
         } else if (category[0]!! == spinner_category.selectedItem) {
-            tvMessage.text = "Select Crop Category"
+            tvMessage.text = requireActivity().getString(R.string.select_category)
         } else if (category[2] == spinner_category.selectedItem && etCategory!!.text.toString().trim() == "") {
-            tvMessage.text = "Specify Category"
+            tvMessage.text = requireActivity().getString(R.string.speicify_category)
         } else {
             tvMessage.setTextColor(resources.getColor(R.color.green_light))
             tvMessage.text = "Uploading... Please wait!"
@@ -93,7 +96,7 @@ class QualityTesting : Fragment(), OnItemSelectedListener {
 
     override fun onItemSelected(parent: AdapterView<*>?, view: View, position: Int, id: Long) {
         Toast.makeText(context, category[position], Toast.LENGTH_SHORT).show()
-        if ("Other" == category[position]) {
+        if (requireContext().getString(R.string.other) == category[position]) {
             etCategory!!.visibility = View.VISIBLE
         } else {
             etCategory!!.visibility = View.GONE
