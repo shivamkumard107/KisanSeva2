@@ -141,36 +141,24 @@
             android:text="Rs 12/Kg"
             android:textSize="14sp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/cardView"
+            app:layout_constraintEnd_toStartOf="@+id/rating"
             app:layout_constraintStart_toEndOf="@+id/tvQ2"
             app:layout_constraintTop_toTopOf="@+id/tvQ2"
             app:layout_constraintVertical_bias="0.0" />
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cardView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="12sp"
-            android:layout_marginBottom="3dp"
-            android:backgroundTint="#D3D3D3"
-            android:clickable="true"
-            android:focusable="true"
-            android:foreground="?attr/selectableItemBackgroundBorderless"
-            app:cardCornerRadius="5dp"
-            app:cardElevation="6dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvDescription">
 
             <TextView
+                android:id="@+id/rating"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginEnd="12sp"
                 android:drawableEnd="@drawable/ic_star"
                 android:drawablePadding="6dp"
-                android:padding="3dp"
                 android:text="4.7"
-                android:textColor="@color/blackText" />
-        </androidx.cardview.widget.CardView>
+                android:textColor="@color/blackText"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tvPrice"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>
