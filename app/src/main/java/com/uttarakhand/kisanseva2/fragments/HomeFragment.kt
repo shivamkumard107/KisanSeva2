@@ -7,10 +7,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentTransaction
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.uttarakhand.kisanseva2.Adapter.FarmerInventoryAdapter
 import com.uttarakhand.kisanseva2.R
+import com.uttarakhand.kisanseva2.activities.LoginActivity
 import com.uttarakhand.kisanseva2.activities.UploadInventoryActivity
 import com.uttarakhand.kisanseva2.model.FarmerInfo
 import com.uttarakhand.kisanseva2.network.APIs
@@ -41,7 +41,7 @@ class HomeFragment : Fragment() {
     }
 
     private fun addItem() {
-       startActivity(Intent(context, UploadInventoryActivity::class.java))
+        startActivity(Intent(context, UploadInventoryActivity::class.java))
     }
 
     private fun initData(v: View) {
@@ -58,6 +58,10 @@ class HomeFragment : Fragment() {
                             call: Call<FarmerInfo>,
                             response: Response<FarmerInfo>
                     ) {
+                        if (response.code() != 200) {
+                            startActivity(Intent(context, LoginActivity::class.java))
+                            activity!!.finish()
+                        }
                         pb_inventory.visibility = View.GONE
                         if (response.body() != null) {
                             Log.d("GiftOnResponse", response.body()!!.toString())
