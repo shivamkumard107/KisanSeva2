@@ -10,6 +10,7 @@ import androidx.cardview.widget.CardView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.gson.Gson
 import com.uttarakhand.kisanseva2.R
 import com.uttarakhand.kisanseva2.activities.OrderDetailsActivity
 import com.uttarakhand.kisanseva2.model.allOrders.AllOrders
@@ -24,7 +25,7 @@ class OrdersAdapter(private val allOrders: AllOrders,
         val date: TextView = itemView.findViewById(R.id.tvDate)
         val items: RecyclerView = itemView.findViewById(R.id.rvItemOrdered)
         val totalAmout: TextView = itemView.findViewById(R.id.tvAmount)
-        val status: TextView = itemView.findViewById(R.id.status)
+        val status: TextView = itemView.findViewById(R.id.tvStatus)
         val cv: CardView = itemView.findViewById(R.id.cl)
     }
 
@@ -51,6 +52,8 @@ class OrdersAdapter(private val allOrders: AllOrders,
 
     private fun openDetailedOrder(order: Data) {
         val i = Intent(context, OrderDetailsActivity::class.java)
+        val gson = Gson()
+        i.putExtra("order", gson.toJson(order))
         context.startActivity(i)
     }
 }
