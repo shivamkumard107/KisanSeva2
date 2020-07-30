@@ -1,5 +1,6 @@
 package com.uttarakhand.kisanseva2.fragments
 
+import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.preference.PreferenceManager
@@ -18,6 +19,7 @@ import com.uttarakhand.kisanseva2.network.APIs
 import com.uttarakhand.kisanseva2.network.RetrofitClientInstance
 import kotlinx.android.synthetic.main.fragment_basic_details.*
 import kotlinx.android.synthetic.main.fragment_basic_details.view.*
+import kotlinx.android.synthetic.main.fragment_quality_testing.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -27,7 +29,6 @@ import retrofit2.create
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
 private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
-
 /**
  * A simple [Fragment] subclass.
  * Use the [BasicDetailsFragment.newInstance] factory method to
@@ -35,7 +36,6 @@ private const val ARG_PARAM2 = "param2"
  */
 class BasicDetailsFragment : Fragment() {
     private var phoneNumber: String? = null
-
     private var param1: String? = null
     private var param2: String? = null
 
@@ -52,6 +52,9 @@ class BasicDetailsFragment : Fragment() {
         // Inflate the layout for this fragment
         val v = inflater.inflate(R.layout.fragment_basic_details, container, false)
         val bundle = arguments
+        v.UploadAadhar.setOnClickListener{
+            openFileChooser()
+        }
         if (bundle != null) {
             phoneNumber = bundle.getString(Constants.PHONE_NUMBER)
         }
@@ -72,11 +75,48 @@ class BasicDetailsFragment : Fragment() {
         } else if (etDistrictIn.text.toString() == "") {
             etDistrict.error = "Enter District"
             etDistrict.requestFocus()
-        } else {
+        }
+        else if(!imageSelected){
+            Toast.makeText(context, "Upload Aadhar Card", Toast.LENGTH_SHORT).show()
+        }
+        else
+        {
             sendRequest()
         }
 
 
+    }
+    private val PICK_IMAGE_REQUEST = 1
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        try {
+            if (requestCode == PICK_IMAGE_REQUEST && resultCode == Activity.RESULT_OK && null != data) {
+                // When a single image is selected.
+                if (data.data != null) {
+                    var uri = data.data
+                    Log.d("ImageDetails", "Single Image URI : $uri")
+                    uri = data.data
+                    imageSelected = true
+//                    imageButton.setBackgroundResource(android.R.color.transparent)
+//                    imageButton.setImageURI(uri)
+                    Log.i("URI_pic", uri.toString())
+                }
+            }
+        } catch (e: Exception) {
+            Toast.makeText(context, "Something Went Wrong.", Toast.LENGTH_LONG).show()
+            e.printStackTrace()
+        }
+        super.onActivityResult(requestCode, resultCode, data)
+
+    }
+    //This is to upload AADHAR Card Pic on the server @ps
+    private var imageSelected: Boolean = false
+
+    private fun openFileChooser() {
+        imageSelected = false
+        val intent = Intent()
+        intent.type = "image/*"
+        intent.action = Intent.ACTION_GET_CONTENT
+        startActivityForResult(intent, PICK_IMAGE_REQUEST)
     }
 
     private fun sendRequest() {
