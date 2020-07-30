@@ -830,5 +830,12 @@
     <string name="sign_out">Sign Out</string>
     <string name="data_not_available">Data Not Available...</string>
     <string name="english_text">English Text</string>
+    <string name="testing_quality">Testing Quality</string>
+    <string name="orders">Orders</string>
+    <string name="change_language">Change Language</string>
+    <string name="weather">Weather</string>
+    <string name="select_category">Select Category</string>
+    <string name="wheat">Wheat</string>
+    <string name="other">Other</string>
 </resources>
 

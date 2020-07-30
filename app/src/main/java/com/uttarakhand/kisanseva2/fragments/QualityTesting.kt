@@ -23,7 +23,7 @@ import kotlinx.android.synthetic.main.fragment_quality_testing.view.*
  * create an instance of this fragment.
  */
 class QualityTesting : Fragment(), OnItemSelectedListener {
-    val category = arrayOf<String?>("Select Category", "Wheat", "Other")
+    val category = arrayOf<String?>(getString(R.string.select_category), getString(R.string.wheat), getString(R.string.other))
     var etCategory: EditText? = null
 
     // TODO: Rename and change types of parameters

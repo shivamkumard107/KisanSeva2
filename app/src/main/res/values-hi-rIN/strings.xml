@@ -841,5 +841,12 @@
     <string name="sign_out">प्रस्थान करें</string>
     <string name="data_not_available">डेटा उपलब्ध नहीं...</string>
     <string name="english_text">अंग्रेजी पाठ</string>
+    <string name="testing_quality">परीक्षण की गुणवत्ता</string>
+    <string name="change_language">भाषा बदलो</string>
+    <string name="orders">आदेश</string>
+    <string name="weather">मौसम</string>
+    <string name="select_category">Select Category</string>
+    <string name="wheat">Wheat</string>
+    <string name="other">Other</string>
 </resources>
 

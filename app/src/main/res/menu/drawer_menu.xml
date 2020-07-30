@@ -5,21 +5,21 @@
     <item
         android:id="@+id/nav_quality"
         android:icon="@drawable/ic_quality"
-        android:title="Testing Quality" />
+        android:title="@string/testing_quality" />
     <item
         android:id="@+id/nav_orders"
         android:icon="@drawable/ic_order"
-        android:title="Orders" />
+        android:title="@string/orders" />
     <item
         android:id="@+id/nav_lang"
         android:icon="@drawable/ic_language"
-        android:title="Change Language" />
+        android:title="@string/change_language" />
     <item
         android:id="@+id/nav_weather"
         android:icon="@drawable/ic_weather"
-        android:title="Weather" />
+        android:title="@string/weather" />
     <item
         android:id="@+id/nav_signout"
         android:icon="@drawable/ic_logout"
-        android:title="Sign Out" />
+        android:title="@string/sign_out" />
 </menu>
