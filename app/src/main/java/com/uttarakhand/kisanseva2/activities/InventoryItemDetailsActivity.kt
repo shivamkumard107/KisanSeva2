@@ -1,5 +1,6 @@
 package com.uttarakhand.kisanseva2.activities
 
+import android.content.Context
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
@@ -28,8 +29,9 @@ class InventoryItemDetailsActivity : AppCompatActivity() {
         val item = gson.fromJson<Item>(intent.getStringExtra("item"), Item::class.java)
 
         val toolbar: Toolbar = findViewById<View>(R.id.toolbar) as Toolbar
+        toolbar.title = getString(R.string.item_detail_heading)
         setSupportActionBar(toolbar)
-        mSectionsPagerAdapter = SectionsPagerAdapter(supportFragmentManager, item)
+        mSectionsPagerAdapter = SectionsPagerAdapter(supportFragmentManager, item, this)
 
         mViewPager = findViewById<View>(R.id.view_pager) as ViewPager
         mViewPager?.adapter = mSectionsPagerAdapter
@@ -39,7 +41,7 @@ class InventoryItemDetailsActivity : AppCompatActivity() {
     }
 
 
-    class SectionsPagerAdapter(fm: FragmentManager, private val item: Item) :
+    class SectionsPagerAdapter(fm: FragmentManager, private val item: Item, private val context: Context) :
             FragmentPagerAdapter(fm) {
         override fun getItem(position: Int): Fragment {
             var fragment: Fragment =
@@ -60,8 +62,8 @@ class InventoryItemDetailsActivity : AppCompatActivity() {
 
         override fun getPageTitle(position: Int): CharSequence? {
             when (position) {
-                0 -> return "Item Details"
-                1 -> return "Reviews"
+                0 -> return context.getString(R.string.tab1_item_details)
+                1 -> return context.getString(R.string.tab2_reviews)
             }
             return null
         }

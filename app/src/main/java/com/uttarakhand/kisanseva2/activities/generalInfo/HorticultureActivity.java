@@ -20,8 +20,6 @@ public class HorticultureActivity extends AppCompatActivity {
     HorticultureAdapter adapter;
 
     Integer[] imageUrls={R.drawable.mango_main,R.drawable.banana_main,R.drawable.guava_main};
-
-
     Integer[] englishTexts={R.string.horticulture_item1_en,R.string.horticulture_item2_en,
             R.string.horticulture_item3_en};
 
@@ -32,6 +30,7 @@ public class HorticultureActivity extends AppCompatActivity {
 
         if(getSupportActionBar()!=null){
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            getSupportActionBar().setTitle(getString(R.string.horticulture_card_title));
         }
 
         list=new ArrayList<>();

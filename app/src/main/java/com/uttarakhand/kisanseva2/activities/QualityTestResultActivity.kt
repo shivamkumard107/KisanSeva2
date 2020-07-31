@@ -8,6 +8,7 @@ class QualityTestResultActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_quality_test_result)
+        supportActionBar!!.title = getString(R.string.crop_quality)
 
     }
 }

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">किसनसेवा</string>
+    <string name="app_name">किसन सेवा</string>
     <string name="title_home">घर</string>
     <string name="title_crop_predict">भविष्यवाणी</string>
     <string name="title_info">जानकारी</string>
@@ -67,33 +67,20 @@
     <string name="navigation_drawer_close">नेविगेशन ड्रॉअर बंद करें
 </string>
 
-    <string name="action_settings">किसान मदद को बुलाओ
- केंद्र</string>
-    <string name="title_activity_bazar__rate__select">Bazar_Rate_Select</string>
+    <string name="action_settings">किसान मदद को बुलाओ केंद्र</string>
+    <string name="title_activity_bazar__rate__select">बाजार दर का चयन करें</string>
 
-    <string name="crop_quality_prediction_en">Crop Quality Predicton</string>
-    <string name="crop_quality_prediction_hi">फसल की गुणवत्ता की भविष्यवाणी</string>
+    <string name="crop_production_card_title">खेती की उन्‍नत विधियां</string>
 
-    <string name="crop_selling_en">Buy and Sell Crops</string>
-    <string name="crop_selling_hi">फसलें खरीदें और बेचें</string>
+    <string name="treatment_card_title">प्रमुख समस्याएं एवं निवारण</string>
 
-    <string name="crop_production_card_title_en">Crop Production Methods</string>
-    <string name="crop_production_card_title_hi">खेती की उन्‍नत विधियां</string>
+    <string name="storage_card_title">मृदा स्वास्थ्य कार्डं</string>
 
-    <string name="treatment_card_title_en">Crop Treatment Method</string>
-    <string name="treatment_card_title_hi">प्रमुख समस्याएं एवं निवारण</string>
+    <string name="survey_card_title">उत्पादन का विवरण </string>
 
-    <string name="storage_card_title_en">Soil Health Card</string>
-    <string name="storage_card_title_hi">मृदा स्वास्थ्य कार्डं</string>
+    <string name="horticulture_card_title">बागवानी की उन्‍नत विधियां</string>
 
-    <string name="survey_card_title_en"> Production Details</string>
-    <string name="survey_card_title_hi">उत्पादन का विवरण </string>
-
-    <string name="horticulture_card_title_en">Horticulture Methods</string>
-    <string name="horticulture_card_title_hi">बागवानी की उन्‍नत विधियां</string>
-
-    <string name="policy_card_title_en">Government Schemes</string>
-    <string name="policy_card_title_hi"> सरकार की योजनाएं  </string>
+    <string name="policy_card_title"> सरकार की योजनाएं  </string>
 
 
     <string name="horticulture_item1_en">आम</string>
@@ -120,12 +107,9 @@
     <string name="wheat_h13">13.कटाई-गहाई</string>
     <string name="wheat_h14">14.उपज एवं भंडारण</string>
 
-    <string name="crop1_hi">गेंहू की उन्नत खेती </string>
-    <string name="crop2_hi">धान अर्थात चावल की खेती </string>
-    <string name="crop3_hi">अरहर की खेती </string>
-    <string name="crop1_en">Wheat Production Methods</string>
-    <string name="crop2_en">Paddy Production Methods</string>
-    <string name="crop3_en">Toor Production Methods</string>
+    <string name="crop1_en">गेंहू की उन्नत खेती </string>
+    <string name="crop2_en">धान अर्थात चावल की खेती </string>
+    <string name="crop3_en">अरहर की खेती </string>
 
     <string name="wh1">
         गेहूँ की खेती विश्व के प्रायः हर भाग में होती है ।
@@ -843,7 +827,7 @@
     <string name="english_text">अंग्रेजी पाठ</string>
     <string name="testing_quality">परीक्षण की गुणवत्ता</string>
     <string name="change_language">भाषा बदलो</string>
-    <string name="orders">आदेश</string>
+    <string name="orders">ऑर्डर्स</string>
     <string name="weather">मौसम</string>
     <string name="select_category">श्रेणी का चयन करें</string>
     <string name="wheat">गेहूँ</string>
@@ -874,4 +858,32 @@
     <string name="quantity">मात्रा :</string>
     <string name="price">कीमत :</string>
     <string name="speicify_category">श्रेणी निर्दिष्ट करें</string>
+    <string name="tab1_item_details">आइटम विवरण</string>
+    <string name="tab2_reviews">ग्राहक रेटिंग</string>
+    <string name="enter_product_name">उत्पाद का नाम दर्ज करें</string>
+    <string name="enter_product_category">उत्पाद श्रेणी दर्ज करें</string>
+    <string name="enter_product_quality">उत्पाद की गुणवत्ता दर्ज करें</string>
+    <string name="quantity_available_in_stock">स्टॉक में उपलब्ध मात्रा</string>
+    <string name="price_rs_kg">मूल्य (रु। / किलो)</string>
+    <string name="description">विवरण</string>
+    <string name="submit">प्रस्तुत</string>
+    <string name="edit_details">विवरण संपादित करें</string>
+    <string name="item_detail_heading">आइटम का विवरण</string>
+    <string name="soil_test_lab">निकटतम मृदा परीक्षण प्रयोगशाला का पता लगाएं</string>
+    <string name="labs_heading">मृदा परीक्षण प्रयोगशाला</string>
+    <string name="select_state">राज्य चुनें</string>
+    <string name="select_district">जिले का चयन करें</string>
+    <string name="profile">प्रोफ़ाइल</string>
+    <string name="weather_city">द्वारका, नई दिल्ली, भारत</string>
+    <string name="weather_time">४-फरवरी -२०१० ९: ००:०१ पूर्वाह्न</string>
+    <string name="weather_overall">धूप</string>
+    <string name="weather_temp">34 ° से</string>
+    <string name="weather_humidity">आर्द्रता: 62%</string>
+    <string name="weather_pressure">दबाव: 1010 hPa</string>
+    <string name="add_in_inventory">इन्वेंट्री आइटम जोड़ें</string>
+    <string name="items">आइटम</string>
+    <string name="status">स्थिति</string>
+    <string name="total_amount">कुल रकम</string>
+    <string name="all_orders">सभी ऑर्डर</string>
+    <string name="order_details">ऑर्डर का विवरण</string>
 </resources>

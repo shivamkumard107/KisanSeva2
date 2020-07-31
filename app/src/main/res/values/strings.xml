@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">KisanSeva</string>
+    <string name="app_name">Kisan Seva</string>
     <string name="title_home">Home</string>
     <string name="title_crop_predict">Predict</string>
     <string name="title_info">Info</string>
@@ -69,29 +69,17 @@
     <string name="action_settings">Call Kisan Help Centre</string>
     <string name="title_activity_bazar__rate__select">Bazar_Rate_Select</string>
 
-    <string name="crop_quality_prediction_en">Crop Quality Predicton</string>
-    <string name="crop_quality_prediction_hi">फसल की गुणवत्ता की भविष्यवाणी</string>
+    <string name="crop_production_card_title">Crop Production Methods</string>
 
-    <string name="crop_selling_en">Buy and Sell Crops</string>
-    <string name="crop_selling_hi">फसलें खरीदें और बेचें</string>
+    <string name="treatment_card_title">Crop Treatment Method</string>
 
-    <string name="crop_production_card_title_en">Crop Production Methods</string>
-    <string name="crop_production_card_title_hi">खेती की उन्‍नत विधियां</string>
+    <string name="storage_card_title">Soil Health Card</string>
 
-    <string name="treatment_card_title_en">Crop Treatment Method</string>
-    <string name="treatment_card_title_hi">प्रमुख समस्याएं एवं निवारण</string>
+    <string name="survey_card_title"> Production Details</string>
 
-    <string name="storage_card_title_en">Soil Health Card</string>
-    <string name="storage_card_title_hi">मृदा स्वास्थ्य कार्डं</string>
+    <string name="horticulture_card_title">Horticulture Methods</string>
 
-    <string name="survey_card_title_en"> Production Details</string>
-    <string name="survey_card_title_hi">उत्पादन का विवरण </string>
-
-    <string name="horticulture_card_title_en">Horticulture Methods</string>
-    <string name="horticulture_card_title_hi">बागवानी की उन्‍नत विधियां</string>
-
-    <string name="policy_card_title_en">Government Schemes</string>
-    <string name="policy_card_title_hi"> सरकार की योजनाएं  </string>
+    <string name="policy_card_title">Government Schemes</string>
 
 
     <string name="horticulture_item1_en">Mango</string>
@@ -118,9 +106,7 @@
     <string name="wheat_h13">13.कटाई-गहाई</string>
     <string name="wheat_h14">14.उपज एवं भंडारण</string>
 
-    <string name="crop1_hi">गेंहू की उन्नत खेती </string>
-    <string name="crop2_hi">धान अर्थात चावल की खेती </string>
-    <string name="crop3_hi">अरहर की खेती </string>
+
     <string name="crop1_en">Wheat Production Methods</string>
     <string name="crop2_en">Paddy Production Methods</string>
     <string name="crop3_en">Toor Production Methods</string>
@@ -863,5 +849,33 @@
     <string name="quantity">Quantity :</string>
     <string name="price">Price :</string>
     <string name="speicify_category">Specify Category</string>
+    <string name="tab1_item_details">Item Details</string>
+    <string name="tab2_reviews">Reviews</string>
+    <string name="enter_product_name">Enter Product Name</string>
+    <string name="enter_product_category">Enter Product Category</string>
+    <string name="enter_product_quality">Enter Product Quality</string>
+    <string name="quantity_available_in_stock">Quantity Available In Stock</string>
+    <string name="price_rs_kg">Price (Rs/Kg)</string>
+    <string name="description">Description</string>
+    <string name="submit">Submit</string>
+    <string name="edit_details">Edit Details</string>
+    <string name="item_detail_heading">Item\'s Details</string>
+    <string name="soil_test_lab">Find Nearest Soil Test Laboratory</string>
+    <string name="labs_heading">Soil Testing Labs</string>
+    <string name="select_state">Select State</string>
+    <string name="select_district">Select District</string>
+    <string name="profile">profile</string>
+    <string name="weather_city">Dwarka, New Delhi, India</string>
+    <string name="weather_time">4-Feb-2020 9:00:05 AM</string>
+    <string name="weather_overall">Sunny</string>
+    <string name="weather_temp">34 °C</string>
+    <string name="weather_humidity">Humidity: 62%</string>
+    <string name="weather_pressure">Pressure: 1010 hPa</string>
+    <string name="add_in_inventory">Add Inventory Item</string>
+    <string name="items">ITEMS</string>
+    <string name="status">STATUS</string>
+    <string name="total_amount">TOTAL AMOUNT</string>
+    <string name="all_orders">All Orders</string>
+    <string name="order_details">Order Details</string>
 </resources>
 

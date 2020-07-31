@@ -7,7 +7,7 @@ import android.content.Intent;
  */
 public class MainListItem {
     private int imageUrl;
-    private int hindiText,englishText;
+    private int englishText;
     private String backgroundColor;
     private Intent intent;
 
@@ -25,14 +25,6 @@ public class MainListItem {
 
     public void setImageUrl(int imageUrl) {
         this.imageUrl = imageUrl;
-    }
-
-    public int getHindiText() {
-        return hindiText;
-    }
-
-    public void setHindiText(int hindiText) {
-        this.hindiText = hindiText;
     }
 
     public int getEnglishText() {

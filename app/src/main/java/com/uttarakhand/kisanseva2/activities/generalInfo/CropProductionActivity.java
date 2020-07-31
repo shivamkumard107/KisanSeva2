@@ -22,8 +22,6 @@ public class CropProductionActivity extends AppCompatActivity {
 
     Integer[] imageUrls = {R.raw.wheat, R.raw.paddy, R.raw.arhar};
 
-    Integer[] hindiTexts = {R.string.crop1_hi, R.string.crop2_hi,
-            R.string.crop3_hi};
 
     Integer[] englishTexts = {R.string.crop1_en, R.string.crop2_en,
             R.string.crop3_en};
@@ -36,6 +34,7 @@ public class CropProductionActivity extends AppCompatActivity {
         setContentView(R.layout.activity_crop_production);
         if (getSupportActionBar() != null) {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            getSupportActionBar().setTitle(getString(R.string.crop_production_card_title));
         }
 
         list = new ArrayList<>();
@@ -45,7 +44,6 @@ public class CropProductionActivity extends AppCompatActivity {
         for (int i = 0; i < imageUrls.length; i++) {
             MainListItem item = new MainListItem();
             item.setEnglishText(englishTexts[i]);
-            item.setHindiText(hindiTexts[i]);
             item.setBackgroundColor(backgroundColors[i]);
             item.setImageUrl(imageUrls[i]);
             item.setIntent(links[i]);

@@ -6,6 +6,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
 
 import com.readystatesoftware.sqliteasset.SQLiteAssetHelper;
+import com.uttarakhand.kisanseva2.R;
 import com.uttarakhand.kisanseva2.model.ItemHealthCard;
 
 import java.util.ArrayList;
@@ -17,9 +18,10 @@ public class SqliteHelper extends SQLiteAssetHelper {
 
     private static final String DATABASE_NAME = "soil_lab";
     private static final int DATABASE_VERSION = 1;
-
+    private Context context;
     public SqliteHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
+        this.context = context;
     }
 
     public ArrayList<String> getDistinctStates() {
@@ -29,7 +31,7 @@ public class SqliteHelper extends SQLiteAssetHelper {
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor cursor = db.rawQuery(selectQuery, null);
 
-        list.add("Select State");
+        list.add(context.getString(R.string.select_state));
 
         if (cursor.move(3)) {
             do {
@@ -47,7 +49,7 @@ public class SqliteHelper extends SQLiteAssetHelper {
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor cursor = db.rawQuery(selectQuery, null);
 
-        list.add("Select District");
+        list.add(context.getString(R.string.select_district));
 
         if (cursor.moveToFirst()) {
             do {

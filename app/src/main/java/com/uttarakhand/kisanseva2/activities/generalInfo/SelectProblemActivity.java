@@ -21,6 +21,9 @@ public class SelectProblemActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_select_problem);
+        if (getSupportActionBar()!=null){
+            getSupportActionBar().setTitle(getString(R.string.treatment_card_title));
+        }
         Intent[] links=getIntents();
 
         String[] array=getResources().getStringArray(R.array.problems);

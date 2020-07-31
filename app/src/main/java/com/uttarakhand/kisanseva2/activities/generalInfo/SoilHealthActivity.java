@@ -35,6 +35,7 @@ public class SoilHealthActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_soil_health);
+        getSupportActionBar().setTitle(R.string.labs_heading);
         spinner1= (Spinner) findViewById(R.id.spinner1);
         spinner2= (Spinner) findViewById(R.id.spinner2);
         btnSubmit= (Button) findViewById(R.id.btnSubmit);
@@ -45,7 +46,7 @@ public class SoilHealthActivity extends AppCompatActivity {
 
         list1=helper.getDistinctStates();
 
-        Toast.makeText(SoilHealthActivity.this,"Find Nearest Soil Test Laboratory",Toast.LENGTH_LONG).show();
+        Toast.makeText(SoilHealthActivity.this, R.string.soil_test_lab,Toast.LENGTH_LONG).show();
 
         arrayAdapter1=new ArrayAdapter<String>(this,android.R.layout.simple_spinner_dropdown_item,list1);
         arrayAdapter1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -67,7 +68,7 @@ public class SoilHealthActivity extends AppCompatActivity {
             }
         });
 
-        list2.add("Select District");
+        list2.add(getString(R.string.select_district));
 
         arrayAdapter2=new ArrayAdapter<String>(this,android.R.layout.simple_spinner_dropdown_item,list2);
         arrayAdapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);

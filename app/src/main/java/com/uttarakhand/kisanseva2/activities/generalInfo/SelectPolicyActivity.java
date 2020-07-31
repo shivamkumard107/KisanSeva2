@@ -12,6 +12,7 @@ import com.uttarakhand.kisanseva2.Adapter.PolicyAdapter;
 import com.uttarakhand.kisanseva2.R;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class SelectPolicyActivity extends AppCompatActivity {
     private PolicyAdapter adapter;
@@ -23,8 +24,7 @@ public class SelectPolicyActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_select_policy);
-//        Toolbar toolbar= (Toolbar) findViewById(R.id.toolbar);
-        //setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle(getString(R.string.policy_title));
 
         links=getResources().getStringArray(R.array.policies_link);
 
@@ -34,9 +34,7 @@ public class SelectPolicyActivity extends AppCompatActivity {
 
         String[] array=getResources().getStringArray(R.array.policies);
 
-        for(int i=0;i<array.length;i++){
-            list.add(array[i]);
-        }
+        list.addAll(Arrays.asList(array));
 
         adapter = new PolicyAdapter(this,list,links);
 

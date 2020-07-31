@@ -23,12 +23,12 @@ class InformationFragment : Fragment() {
     private var recyclerView: RecyclerView? = null
     private var adapter: MainAdapter? = null
     private val imageUrls = arrayOf(R.raw.crop_production_opt, R.raw.treat, R.raw.shc2,  /*R.raw.production_main,*/R.raw.horticulture_main, R.raw.govp)
-    private val hindiTexts = arrayOf(R.string.crop_production_card_title_hi, R.string.treatment_card_title_hi,
-            R.string.storage_card_title_hi,
-            R.string.horticulture_card_title_hi, R.string.policy_card_title_hi)
-    private val englishTexts = arrayOf(R.string.crop_production_card_title_en, R.string.treatment_card_title_en,
-            R.string.storage_card_title_en,
-            R.string.horticulture_card_title_en, R.string.policy_card_title_en)
+    private val hindiTexts = arrayOf(R.string.crop_production_card_title, R.string.treatment_card_title,
+            R.string.storage_card_title,
+            R.string.horticulture_card_title, R.string.policy_card_title)
+    private val englishTexts = arrayOf(R.string.crop_production_card_title, R.string.treatment_card_title,
+            R.string.storage_card_title,
+            R.string.horticulture_card_title, R.string.policy_card_title)
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         (activity as AppCompatActivity?)!!.supportActionBar!!.show()
@@ -44,7 +44,6 @@ class InformationFragment : Fragment() {
         for (i in imageUrls.indices) {
             val item = MainListItem()
             item.imageUrl = imageUrls[i]
-            item.hindiText = hindiTexts[i]
             item.englishText = englishTexts[i]
             item.intent = links[i]
             list!!.add(item)

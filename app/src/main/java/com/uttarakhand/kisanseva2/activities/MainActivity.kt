@@ -54,11 +54,13 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             startActivity(Intent(this, LoginActivity::class.java))
             finish()
         }
+
         val bottomNav = findViewById<BottomNavigationView>(R.id.nav_view)
         bottomNav.setOnNavigationItemSelectedListener(navListener)
 
 
         val toolbar: androidx.appcompat.widget.Toolbar = findViewById(R.id.toolbar)
+        toolbar.title = getString(R.string.app_name)
         setSupportActionBar(toolbar)
         drawer = findViewById<DrawerLayout>(R.id.drawer_layout)
         val navigationView = findViewById<NavigationView>(R.id.nav_draw_view)

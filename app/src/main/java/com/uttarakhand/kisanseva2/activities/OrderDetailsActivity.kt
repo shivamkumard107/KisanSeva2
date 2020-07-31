@@ -15,6 +15,7 @@ class OrderDetailsActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_order_details)
+        supportActionBar!!.title = getString(R.string.order_details)
         val gson = Gson()
         val order = gson.fromJson<Data>(intent.getStringExtra("order"), Data::class.java)
         rvItemOrdered.adapter = OrderItemsAdapter(order.orderQuantity, this)

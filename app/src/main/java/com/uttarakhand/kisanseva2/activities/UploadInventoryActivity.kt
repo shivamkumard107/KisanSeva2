@@ -47,7 +47,7 @@ class UploadInventoryActivity : AppCompatActivity() {
         setContentView(R.layout.activity_upload_inventory)
         val colToolbar: CollapsingToolbarLayout = findViewById(R.id.collapsing_toolbar)
         val toolbar: Toolbar = findViewById(R.id.toolbar)
-        colToolbar.title = "Add Inventory Item"
+        colToolbar.title = getString(R.string.add_in_inventory)
         colToolbar.setCollapsedTitleTextColor(resources.getColor(R.color.colorTitle))
         colToolbar.setExpandedTitleColor(Color.TRANSPARENT)
         toolbar.setNavigationOnClickListener { v1: View? -> finish() }

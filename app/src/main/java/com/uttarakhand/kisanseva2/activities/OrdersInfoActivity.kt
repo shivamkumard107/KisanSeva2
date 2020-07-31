@@ -20,6 +20,7 @@ class OrdersInfoActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_orders_info)
+        supportActionBar!!.title = getString(R.string.all_orders)
         initData()
     }
 

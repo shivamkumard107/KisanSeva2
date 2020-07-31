@@ -26,12 +26,12 @@ public class WeatherActivity extends AppCompatActivity {
         pressure_field = (TextView) findViewById(R.id.pressure_field);
         weatherIcon = findViewById(R.id.weather_icon);
 
-        cityField.setText("Dwarka, New Delhi, India");
-        updatedField.setText("4-Feb-2020 9:00:05 AM");
-        detailsField.setText("Sunny");
-        currentTemperatureField.setText("34 °C");
-        humidity_field.setText("Humidity: " + "62%");
-        pressure_field.setText("Pressure: " + "1010 hPa");
+        cityField.setText(R.string.weather_city);
+        updatedField.setText(R.string.weather_time);
+        detailsField.setText(R.string.weather_overall);
+        currentTemperatureField.setText(R.string.weather_temp);
+        humidity_field.setText(getString(R.string.weather_humidity));
+        pressure_field.setText(getString(R.string.weather_pressure));
         weatherIcon.setImageResource(R.drawable.sun);
     }
 }
