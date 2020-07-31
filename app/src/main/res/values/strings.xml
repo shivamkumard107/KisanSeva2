@@ -877,5 +877,6 @@
     <string name="total_amount">TOTAL AMOUNT</string>
     <string name="all_orders">All Orders</string>
     <string name="order_details">Order Details</string>
+    <string name="rice">Rice</string>
 </resources>
 

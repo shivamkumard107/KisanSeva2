@@ -42,7 +42,7 @@ class QualityTesting : Fragment(), OnItemSelectedListener {
                               savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
         val v = inflater.inflate(R.layout.fragment_quality_testing, container, false)
-        category = arrayOf<String?>(requireActivity().getString(R.string.select_category), requireActivity().getString(R.string.wheat), requireActivity().getString(R.string.other))
+        category = arrayOf<String?>(requireActivity().getString(R.string.select_category), requireActivity().getString(R.string.wheat), getString(R.string.rice), requireActivity().getString(R.string.other))
 
         etCategory = v.findViewById(R.id.et_title)
         v.findViewById<View>(R.id.imageButton).setOnClickListener { v1: View? -> }
@@ -68,7 +68,7 @@ class QualityTesting : Fragment(), OnItemSelectedListener {
             tvMessage.text = requireActivity().getString(R.string.select_category)
         } else if (category[0]!! == spinner_category.selectedItem) {
             tvMessage.text = requireActivity().getString(R.string.select_category)
-        } else if (category[2] == spinner_category.selectedItem && etCategory!!.text.toString().trim() == "") {
+        } else if (category[3] == spinner_category.selectedItem && etCategory!!.text.toString().trim() == "") {
             tvMessage.text = requireActivity().getString(R.string.speicify_category)
         } else {
             tvMessage.setTextColor(resources.getColor(R.color.green_light))
@@ -79,7 +79,9 @@ class QualityTesting : Fragment(), OnItemSelectedListener {
             handler.postDelayed({
                 pb_testing.visibility = View.GONE
                 submitPost.visibility = View.VISIBLE
-                startActivity(Intent(context, QualityTestResultActivity::class.java))
+                val intent = Intent(context, QualityTestResultActivity::class.java)
+                intent.putExtra("category", spinner_category.selectedItem.toString())
+                startActivity(intent)
             }, 3000)
         }
     }

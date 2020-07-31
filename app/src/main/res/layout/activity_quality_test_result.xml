@@ -35,13 +35,13 @@
                 <ImageView
                     android:id="@+id/item_image"
                     android:layout_width="wrap_content"
-                    android:layout_height="220dp"
-                    android:layout_marginStart="24dp"
-                    android:layout_marginEnd="24dp"
-                    android:layout_marginTop="10dp"
-                    android:scaleType="centerInside"
+                    android:layout_height="350dp"
                     android:layout_centerInParent="true"
-                    android:src="@drawable/add_btn" />
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="24dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/result_1" />
 
                 <LinearLayout
                     android:id="@+id/ml"
@@ -139,6 +139,16 @@
                 app:layout_constraintTop_toBottomOf="@id/tvRatio"
                 app:startIconTintMode="screen" />
 
+            <ImageView
+                android:id="@+id/tick"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:src="@drawable/ic_tick"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="8dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvQuality" />
+
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rvPrevResults"
                 android:layout_width="match_parent"
@@ -147,7 +157,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tvQuality" />
+                app:layout_constraintTop_toBottomOf="@id/tick" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.core.widget.NestedScrollView>

@@ -886,4 +886,5 @@
     <string name="total_amount">कुल रकम</string>
     <string name="all_orders">सभी ऑर्डर</string>
     <string name="order_details">ऑर्डर का विवरण</string>
+    <string name="rice">चावल</string>
 </resources>
