@@ -124,7 +124,7 @@
                 app:startIconTintMode="screen" />
 
             <TextView
-                android:id="@+id/tvQuality"
+                android:id="@+id/district"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -147,7 +147,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 android:layout_marginTop="8dp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tvQuality" />
+                app:layout_constraintTop_toBottomOf="@+id/district" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rvPrevResults"

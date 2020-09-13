@@ -887,4 +887,19 @@
     <string name="all_orders">सभी ऑर्डर</string>
     <string name="order_details">ऑर्डर का विवरण</string>
     <string name="rice">चावल</string>
+    <string name="predicted_price">(40–50 रु।)/किलो</string>
+    <string name="price_filling_toast">मूल्य सीमा, आप खरीदारों से पूछ सकते हैं, भरा हुआ है</string>
+    <string name="negotiated_price">मोलभाव वाला मूल्य</string>
+    <string name="negotiated_prices">खरीदारों द्वारा बातचीत की गई कीमतें</string>
+    <string name="recents_transactions">लेन-देन</string>
+    <string name="available_balance">फसल बेचने से कमाई</string>
+    <string name="request_statement">अनुरोध विवरण</string>
+    <string name="send_money_to_bank">बैंक को पैसा भेजें</string>
+    <string name="earning">आपकी कमाई</string>
+    <string name="reach_buyer">खरीदार तक पहुँचें</string>
+    <string name="call">कॉल</string>
+    <string name="godown">गोदाम</string>
+    <string name="contact_admin">संपर्क व्यवस्थापक</string>
+    <string name="crop_insurance">फसल बीमा</string>
+    <string name="loan_information">ऋण की जानकारी</string>
 </resources>

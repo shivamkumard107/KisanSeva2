@@ -878,5 +878,24 @@
     <string name="all_orders">All Orders</string>
     <string name="order_details">Order Details</string>
     <string name="rice">Rice</string>
+    <string name="predicted_price">(Rs 40–50)/Kg</string>
+    <string name="price_filling_toast">Price range, you can ask from buyers is filled</string>
+    <string name="select_type" translatable="false">Select type</string>
+    <string name="vegetable" translatable="false">vegetable</string>
+    <string name="grain" translatable="false">grain</string>
+    <string name="fruit" translatable="false">fruit</string>
+    <string name="negotiated_price">Negotiated Price</string>
+    <string name="negotiated_prices">Negotiated Prices by Buyers</string>
+    <string name="recents_transactions">Recents Transactions</string>
+    <string name="available_balance">Earning from Crop selling</string>
+    <string name="request_statement">Request Statement</string>
+    <string name="send_money_to_bank">Send Money to Bank</string>
+    <string name="earning">Your Earning</string>
+    <string name="reach_buyer">Reach Buyer</string>
+    <string name="call">Call</string>
+    <string name="godown">Godown and Warehouses</string>
+    <string name="contact_admin">Contact Admin</string>
+    <string name="crop_insurance">Crop Insurance</string>
+    <string name="loan_information">Loan</string>
 </resources>
 

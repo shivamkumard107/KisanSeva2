@@ -8,13 +8,12 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import android.widget.Toast
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.google.gson.Gson
 import com.uttarakhand.kisanseva2.R
-import com.uttarakhand.kisanseva2.activities.InventoryItemDetailsActivity
+import com.uttarakhand.kisanseva2.activities.inventoryManagement.InventoryItemDetailsActivity
 import com.uttarakhand.kisanseva2.model.FarmerInfo
 
 class FarmerInventoryAdapter(val infos: FarmerInfo,
@@ -25,7 +24,7 @@ class FarmerInventoryAdapter(val infos: FarmerInfo,
     class InventoryViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val cardView = itemView.findViewById<CardView>(R.id.cardView2)
         val tvCategory: TextView = itemView.findViewById<TextView>(R.id.tvCategory)
-        val tvQuality: TextView = itemView.findViewById<TextView>(R.id.tvQuality)
+        val tvQuality: TextView = itemView.findViewById<TextView>(R.id.district)
         val tvDescription: TextView = itemView.findViewById<TextView>(R.id.tvDescription)
         val tvQuantity: TextView = itemView.findViewById<TextView>(R.id.tvQuantity)
         val tvPrice: TextView = itemView.findViewById<TextView>(R.id.tvPrice)

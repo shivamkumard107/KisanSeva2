@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.uttarakhand.kisanseva2">
 
+    <uses-permission android:name="android.permission.CALL_PHONE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
@@ -13,20 +14,27 @@
         android:roundIcon="@drawable/app_icon"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".activities.BlockchainActivity" />
+        <activity android:name=".activities.LoanInfoActivity" />
         <activity
-            android:name=".activities.OrderDetailsActivity" />
+            android:name=".activities.GodownsActivity"
+            android:label="Warehouses Locations near you"/>
+        <activity android:name=".activities.FeedbackActivity" />
         <activity
-            android:name=".activities.QualityTestResultActivity" />
+            android:name=".activities.WalletSectionActivity"
+            android:label="@string/earning" />
+        <activity android:name=".activities.NegotiatedActivity" />
+        <activity android:name=".activities.inventoryManagement.OrderDetailsActivity" />
+        <activity android:name=".activities.QualityTestResultActivity" />
         <activity
             android:name=".activities.LogisticsInfoActivity"
             android:label="Logistics Solution" />
+        <activity android:name=".activities.inventoryManagement.OrdersInfoActivity" />
         <activity
-            android:name=".activities.OrdersInfoActivity" />
-        <activity
-            android:name=".activities.InventoryItemDetailsActivity"
+            android:name=".activities.inventoryManagement.InventoryItemDetailsActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".activities.UploadInventoryActivity"
+            android:name=".activities.inventoryManagement.UploadInventoryActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".activities.WeatherActivity"

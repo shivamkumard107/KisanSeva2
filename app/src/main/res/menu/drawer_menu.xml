@@ -3,13 +3,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:showIn="navigation_view">
     <item
-        android:id="@+id/nav_quality"
-        android:icon="@drawable/ic_quality"
-        android:title="@string/testing_quality" />
+        android:id="@+id/nav_insurance"
+        android:icon="@drawable/ic_insurance"
+        android:title="@string/crop_insurance" />
     <item
         android:id="@+id/nav_orders"
         android:icon="@drawable/ic_order"
         android:title="@string/orders" />
+    <item
+        android:id="@+id/nav_negotiate"
+        android:icon="@drawable/ic_contract"
+        android:title="@string/negotiated_price" />
     <item
         android:id="@+id/nav_lang"
         android:icon="@drawable/ic_language"
@@ -18,6 +22,14 @@
         android:id="@+id/nav_weather"
         android:icon="@drawable/ic_weather"
         android:title="@string/weather" />
+    <item
+        android:id="@+id/nav_loan"
+        android:icon="@drawable/ic_loan"
+        android:title="@string/loan_information" />
+    <item
+        android:id="@+id/nav_feedback"
+        android:icon="@drawable/ic_question"
+        android:title="@string/contact_admin" />
     <item
         android:id="@+id/nav_signout"
         android:icon="@drawable/ic_logout"

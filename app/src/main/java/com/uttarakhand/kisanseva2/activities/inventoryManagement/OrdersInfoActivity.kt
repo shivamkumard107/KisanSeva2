@@ -1,4 +1,4 @@
-package com.uttarakhand.kisanseva2.activities
+package com.uttarakhand.kisanseva2.activities.inventoryManagement
 
 import android.os.Bundle
 import android.util.Log
@@ -21,6 +21,9 @@ class OrdersInfoActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_orders_info)
         supportActionBar!!.title = getString(R.string.all_orders)
+        swipe_orders.setOnRefreshListener {
+            initData()
+        }
         initData()
     }
 
@@ -32,11 +35,13 @@ class OrdersInfoActivity : AppCompatActivity() {
                     override fun onFailure(call: Call<AllOrders>, t: Throwable) {
                         Log.d("OrdersError", t.message.toString())
                         Toast.makeText(this@OrdersInfoActivity, t.message, Toast.LENGTH_SHORT).show()
+                        swipe_orders.isRefreshing = false
                     }
 
                     override fun onResponse(call: Call<AllOrders>, response: Response<AllOrders>) {
                         Log.d("OrdersResponse", response.body()!!.toString())
                         initRecycler(response.body()!!)
+                        swipe_orders.isRefreshing = false
                     }
                 })
     }

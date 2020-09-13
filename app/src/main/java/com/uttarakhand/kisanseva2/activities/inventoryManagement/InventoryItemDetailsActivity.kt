@@ -1,4 +1,4 @@
-package com.uttarakhand.kisanseva2.activities
+package com.uttarakhand.kisanseva2.activities.inventoryManagement
 
 import android.content.Context
 import android.os.Bundle

@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.uttarakhand.kisanseva2.Adapter.FarmerInventoryAdapter
 import com.uttarakhand.kisanseva2.R
 import com.uttarakhand.kisanseva2.activities.LoginActivity
-import com.uttarakhand.kisanseva2.activities.UploadInventoryActivity
+import com.uttarakhand.kisanseva2.activities.inventoryManagement.UploadInventoryActivity
 import com.uttarakhand.kisanseva2.model.FarmerInfo
 import com.uttarakhand.kisanseva2.network.APIs
 import com.uttarakhand.kisanseva2.network.RetrofitClientInstance
@@ -37,6 +37,9 @@ class HomeFragment : Fragment() {
         val v = inflater.inflate(R.layout.fragment_home, container, false)
         initData(v)
         v.fab_add_item.setOnClickListener { addItem() }
+        v.swipe_inventory.setOnRefreshListener {
+            initData(v)
+        }
         return v
     }
 
@@ -52,12 +55,14 @@ class HomeFragment : Fragment() {
                 ?.enqueue(object : Callback<FarmerInfo> {
                     override fun onFailure(call: Call<FarmerInfo>, t: Throwable) {
                         Log.d("GiftOnFailure", t.message!!)
+                        swipe_inventory.isRefreshing = false
                     }
 
                     override fun onResponse(
                             call: Call<FarmerInfo>,
                             response: Response<FarmerInfo>
                     ) {
+                        swipe_inventory.isRefreshing = false
                         if (response.code() != 200) {
                             startActivity(Intent(context, LoginActivity::class.java))
                             activity!!.finish()
@@ -70,6 +75,7 @@ class HomeFragment : Fragment() {
                             Log.d("GiftOnResponse", response.message().toString())
                         }
                     }
+
                 })
     }
 

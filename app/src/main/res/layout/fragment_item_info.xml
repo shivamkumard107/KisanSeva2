@@ -129,7 +129,7 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/etQuality"
+                android:id="@+id/etDesc"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -144,7 +144,7 @@
                 app:startIconTintMode="screen">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/etQualityIn"
+                    android:id="@+id/etDescIn"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:inputType="text" />
@@ -163,7 +163,7 @@
                 app:endIconMode="custom"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/etQuality"
+                app:layout_constraintTop_toBottomOf="@+id/etDesc"
                 app:startIconTintMode="screen">
 
                 <com.google.android.material.textfield.TextInputEditText
@@ -230,7 +230,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/etDescription" />
 
             <com.google.android.material.button.MaterialButton
-                android:id="@+id/btnUploadItem"
+                android:id="@+id/btnEditDetails"
                 style="@style/ButtonFilled"
                 android:layout_width="0dp"
                 android:layout_height="0sp"

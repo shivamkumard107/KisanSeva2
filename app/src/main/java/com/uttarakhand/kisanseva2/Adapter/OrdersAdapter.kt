@@ -7,12 +7,11 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.cardview.widget.CardView
-import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.gson.Gson
 import com.uttarakhand.kisanseva2.R
-import com.uttarakhand.kisanseva2.activities.OrderDetailsActivity
+import com.uttarakhand.kisanseva2.activities.inventoryManagement.OrderDetailsActivity
 import com.uttarakhand.kisanseva2.model.allOrders.AllOrders
 import com.uttarakhand.kisanseva2.model.allOrders.Data
 
@@ -21,7 +20,7 @@ class OrdersAdapter(private val allOrders: AllOrders,
         RecyclerView.Adapter<OrdersAdapter.ViewHolder>() {
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val buyerName: TextView = itemView.findViewById(R.id.tvBuyerName)
-        val address: TextView = itemView.findViewById(R.id.tvAddress)
+        val address: TextView = itemView.findViewById(R.id.tvPhone)
         val date: TextView = itemView.findViewById(R.id.tvDate)
         val items: RecyclerView = itemView.findViewById(R.id.rvItemOrdered)
         val totalAmout: TextView = itemView.findViewById(R.id.tvAmount)

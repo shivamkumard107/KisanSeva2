@@ -7,14 +7,16 @@
     android:layout_marginBottom="0dp">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/tvCreditScore"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:text="@string/profile"
+        android:text="Credit Score: 89"
         android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
         android:textColor="@color/blackText"
         android:textStyle="bold"
+        android:drawableEnd="@drawable/ic_info"
+        android:drawablePadding="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -27,7 +29,7 @@
         android:src="@drawable/ic_avatar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/tvCreditScore" />
 
     <TextView
         android:id="@+id/tv_farmer_name"
@@ -82,7 +84,7 @@
         android:focusable="true"
         app:cardCornerRadius="24dp"
         app:cardElevation="4dp"
-        app:layout_constraintBottom_toTopOf="@id/cardSavedPosts"
+        app:layout_constraintBottom_toTopOf="@id/cardWallet"
         app:layout_constraintEnd_toStartOf="@id/cv_logistics"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvPlace">
@@ -95,8 +97,8 @@
                 android:id="@+id/iv"
                 android:layout_width="58dp"
                 android:layout_height="58dp"
-                android:layout_marginBottom="8dp"
                 android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
                 android:src="@drawable/ic_pencil"
                 app:layout_constraintBottom_toTopOf="@id/tv"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -118,7 +120,7 @@
     </com.google.android.material.card.MaterialCardView>
 
     <com.google.android.material.card.MaterialCardView
-        android:id="@+id/cardSavedPosts"
+        android:id="@+id/cardWallet"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="16dp"
@@ -139,12 +141,12 @@
             android:layout_height="match_parent">
 
             <ImageView
-                android:id="@+id/iv2"
+                android:id="@+id/ivWallet"
                 android:layout_width="58dp"
                 android:layout_height="58dp"
-                android:layout_marginBottom="8dp"
                 android:layout_marginTop="8dp"
-                android:src="@drawable/ic_wallet"
+                android:layout_marginBottom="8dp"
+                android:src="@drawable/ic_profile_wallet"
                 app:layout_constraintBottom_toTopOf="@id/tv2"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -160,7 +162,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/iv2" />
+                app:layout_constraintTop_toBottomOf="@id/ivWallet" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </com.google.android.material.card.MaterialCardView>
 
@@ -187,8 +189,8 @@
                 android:id="@+id/iv3"
                 android:layout_width="58dp"
                 android:layout_height="58dp"
-                android:layout_marginBottom="8dp"
                 android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
                 android:src="@drawable/ic_logistics"
                 app:layout_constraintBottom_toTopOf="@id/tv3"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -222,7 +224,7 @@
         app:cardElevation="4dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/cardSavedPosts"
+        app:layout_constraintStart_toEndOf="@id/cardWallet"
         app:layout_constraintTop_toBottomOf="@+id/cv_logistics">
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -233,8 +235,8 @@
                 android:id="@+id/iv4"
                 android:layout_width="58dp"
                 android:layout_height="58dp"
-                android:layout_marginBottom="8dp"
                 android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
                 android:src="@drawable/ic_about"
                 app:layout_constraintBottom_toTopOf="@id/tv4"
                 app:layout_constraintEnd_toEndOf="parent"

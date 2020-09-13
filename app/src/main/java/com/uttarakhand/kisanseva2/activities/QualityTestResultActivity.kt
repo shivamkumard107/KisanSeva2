@@ -19,7 +19,7 @@ class QualityTestResultActivity : AppCompatActivity() {
         tvName.text = "Category: $category"
         tvRatio.text = "Ratio: ${getRandomNumber(80, 90)}/100"
 //        tvQuality.text = "Quality of the $category: ${qualities[getRandomNumber(0, 3)]}"
-        tvQuality.text = "Quality of the $category: Premium"
+        district.text = "Quality of the $category: Premium"
     }
 
     fun getRandomNumber(min: Int, max: Int): Int {

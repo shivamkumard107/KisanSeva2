@@ -3,6 +3,7 @@ package com.uttarakhand.kisanseva2.activities
 import android.content.DialogInterface
 import android.content.Intent
 import android.content.res.Configuration
+import android.net.Uri
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
@@ -19,9 +20,9 @@ import com.google.firebase.FirebaseApp
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import com.uttarakhand.kisanseva2.R
+import com.uttarakhand.kisanseva2.activities.inventoryManagement.OrdersInfoActivity
 import com.uttarakhand.kisanseva2.fragments.*
 import java.util.*
-
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
     private var firebaseAuth: FirebaseAuth? = null
@@ -39,7 +40,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         }
         if (selectedFragment != null) {
             supportFragmentManager.beginTransaction().replace(R.id.fragment_container,
-                    selectedFragment).commit()
+                    selectedFragment).addToBackStack("null").commit()
         }
         true
     }
@@ -70,8 +71,34 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         drawer!!.addDrawerListener(toggle)
         toggle.syncState()
         if (savedInstanceState == null) {
-            supportFragmentManager.beginTransaction().replace(R.id.fragment_container,
-                    HomeFragment()).commit()
+            if (intent.extras != null) {
+                when {
+                    intent.extras!!.getString("open", "inventory") == "inventory" -> {
+                        supportFragmentManager.beginTransaction().replace(R.id.fragment_container,
+                                HomeFragment()).addToBackStack("null").commit()
+                    }
+                    intent.extras!!.getString("open", "inventory") == "information" -> {
+                        supportFragmentManager.beginTransaction().replace(R.id.fragment_container,
+                                InformationFragment()).addToBackStack("null").commit()
+                    }
+                    intent.extras!!.getString("open", "inventory") == "quality" -> {
+                        supportFragmentManager.beginTransaction().replace(R.id.fragment_container,
+                                QualityTesting()).addToBackStack("null").commit()
+                    }
+                    intent.extras!!.getString("open", "inventory") == "chat" -> {
+                        supportFragmentManager.beginTransaction().replace(R.id.fragment_container,
+                                ChatFragment()).addToBackStack("null").commit()
+                    }
+                    intent.extras!!.getString("open", "inventory") == "profile" -> {
+                        supportFragmentManager.beginTransaction().replace(R.id.fragment_container,
+                                ProfileFragment()).addToBackStack("null").commit()
+                    }
+                }
+            } else {
+                supportFragmentManager.beginTransaction().replace(R.id.fragment_container,
+                        HomeFragment()).addToBackStack("null").commit()
+
+            }
         }
     }
 
@@ -81,15 +108,31 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            R.id.action_search -> {
+                supportFragmentManager.beginTransaction().replace(R.id.fragment_container,
+                        SearchFragment()).addToBackStack("null").commit()
+                return true
+            }
+            R.id.action_filter -> {
+                return true
+            }
+        }
         return super.onOptionsItemSelected(item)
     }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
-            R.id.nav_quality -> Toast.makeText(this, "Coming Soon!", Toast.LENGTH_SHORT).show()
+            R.id.nav_insurance -> {
+                val browserIntent = Intent(Intent.ACTION_VIEW, Uri.parse("https://www.pmfby.gov.in/"))
+                startActivity(browserIntent)
+            }
             R.id.nav_lang -> changeLanguage()
             R.id.nav_orders -> startActivity(Intent(this, OrdersInfoActivity::class.java))
+            R.id.nav_negotiate -> startActivity(Intent(this, NegotiatedActivity::class.java))
             R.id.nav_weather -> startActivity(Intent(this, WeatherActivity::class.java))
+            R.id.nav_loan -> startActivity(Intent(this, BlockchainActivity::class.java))
+            R.id.nav_feedback -> startActivity(Intent(this, FeedbackActivity::class.java))
             R.id.nav_signout -> {
                 FirebaseAuth.getInstance().signOut()
                 startActivity(Intent(this, LoginActivity::class.java))
@@ -129,10 +172,15 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     }
 
     override fun onBackPressed() {
-        if (drawer!!.isDrawerOpen(GravityCompat.START)) {
-            drawer!!.closeDrawer(GravityCompat.START)
-        } else {
-            super.onBackPressed()
+        when {
+            drawer!!.isDrawerOpen(GravityCompat.START) -> {
+                drawer!!.closeDrawer(GravityCompat.START)
+            }
+            else -> {
+                finish();
+                moveTaskToBack(true);
+                super.onBackPressed()
+            }
         }
     }
 
