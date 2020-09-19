@@ -38,7 +38,7 @@
     <a href="https://github.com/shivamkumard107/KisanSeva2/blob/master/README.md"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://youtube.com/">View Demo</a>
+    <a href="https://www.youtube.com/watch?v=N_tYhvMh8XE">View Demo</a>
     ·
     <a href="https://github.com/shivamkumard107/KisanSeva2/issues">Report Bug</a>
     ·
@@ -65,8 +65,6 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
-
 Uttarakhand is primarily an agricultural state. The contribution of agriculture to the states domestic product is about 22.4 percent and the population dependent on agriculture for their livelihood is about 75 -85 percent. 
 
 For instance, As per Uttarakhand state planning Commission, 2007, the productivity of wheat in the hills is 13.2 quintals/hectare and rice is 12.36 quintals/hectare. Thus, agricultural opportunities are developing rapidly in the state. Especially, in sector of organic agriculture, Uttarakhand Is highly accessible because of largely rain-fed agriculture and very low use of chemical fertilizers and pesticides, the produce grown by farmer in the area are not only rich in nutrients but also have high medicinal value and provides an opportunity to develop and farmer friendly environment of organic farming that provide better value in the market to Small and Marginal Land holder. 
@@ -86,23 +84,23 @@ All the APIs build for this project are documented here
 https://www.getpostman.com/collections/f90435ac53a58259d965
 
 ### App Screenshots
-| ![SS](images/ss1) | ![SS](images/ss2) | ![SS](images/ss3) |
+| <img src="images/ss1.png" alt="Logo" width="220" height="420"> | <img src="images/ss2.png" alt="Logo" width="220" height="420"> | <img src="images/ss3.png" alt="Logo" width="220" height="420"> |
 |:---:|:---:|:---:|
 | Farmer's Inventory | Add Crops to sell | Crop Quality Prediction |
 
-| ![SS](images/ss4) | ![SS](images/ss5) | ![SS](images/ss6) |
+| <img src="images/ss4.png" alt="Logo" width="220" height="420"> | <img src="images/ss5.png" alt="Logo" width="220" height="420"> | <img src="images/ss6.png" alt="Logo" width="220" height="420"> |
 |:---:|:---:|:---:|
 | Wheat/Rice Quality | Farmer's Profile | Predicted Quality By ML model |
 
-| ![SS](images/ss7) | ![SS](images/ss8) | ![SS](images/ss9) |
+| <img src="images/ss7.png" alt="Logo" width="220" height="420"> | <img src="images/ss8.png" alt="Logo" width="220" height="420"> | <img src="images/ss9.png" alt="Logo" width="220" height="420"> |
 |:---:|:---:|:---:|
 | Weather Updates | Search a feature | Information Section |
 
-| ![SS](images/ss10) | ![SS](images/ss11) | ![SS](images/ss12) |
+| <img src="images/ss10.png" alt="Logo" width="220" height="420"> | <img src="images/ss11.png" alt="Logo" width="220" height="420"> | <img src="images/ss12.png" alt="Logo" width="220" height="420"> |
 |:---:|:---:|:---:|
 | Farmer's Earning Wallet | Navigation Drawer Options | Loan Ledger |
 
-| ![SS](images/ss13) | ![SS](images/ss14) | ![SS](images/ss15) |
+| <img src="images/ss13.png" alt="Logo" width="220" height="420"> | <img src="images/ss14.png" alt="Logo" width="220" height="420"> | <img src="images/ss15.png" alt="Logo" width="220" height="420"> |
 |:---:|:---:|:---:|
 | Soil Testing Labs | Farmer's Credit Score | Maps to connect buyer/seller |
 
@@ -113,8 +111,8 @@ https://www.getpostman.com/collections/f90435ac53a58259d965
 
  Cloning from github
 ```sh
-git clone https://github.com/pytorch/android-demo-app.git
-cd HelloWorldApp
+git clone https://github.com/SIH-20/KisanSeva-SmartIndiaHackathon.git
+cd KisanSeva-SmartIndiaHackathon
 ```
 
 If Android SDK and Android NDK are already installed you can install this application to the connected android device or emulator with:
